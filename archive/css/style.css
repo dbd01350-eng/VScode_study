@@ -140,8 +140,8 @@ ul, ol { list-style: none; }
 
 /* ─── Hero ─── */
 .hero {
-  min-height: 100svh;
-  padding: calc(var(--nav-h) + 60px) var(--section-px) 80px;
+  min-height: auto;
+  padding: calc(var(--nav-h) + 50px) var(--section-px) 40px;
   display: flex; flex-direction: column;
   justify-content: center;
   position: relative;
@@ -342,6 +342,7 @@ ul, ol { list-style: none; }
 
 /* ─── Archive Section ─── */
 .archive-section { background: var(--white); }
+.archive-section .section-inner { padding-top: clamp(24px, 3vw, 40px); }
 
 .toolbar {
   display: flex;
