@@ -36,7 +36,7 @@ VS Code를 사용하여 학습하고 직접 구현한 HTML, CSS, JavaScript 및 
 
 ## 📁 Repository Structure (프로젝트 구조)
 
-`	ext
+```text
 VScode_study/
 ├── archive/                # 포트폴리오 아카이브 대시보드 웹사이트
 │   ├── index.html          # 메인 아카이브 페이지
@@ -63,18 +63,18 @@ VScode_study/
 ├── tailwind/               # Tailwind CSS 유틸리티 퍼스트 디자인 실습
 ├── .gitignore              # GitHub 업로드 제외 설정
 └── README.md               # 프로젝트 안내 문서
-`
+```
 
 ---
 
 ## 🚀 How to Run Locally (로컬 실행 방법)
 
 1. 리포지토리 클론:
-   `ash
-   git clone https://github.com/dbd01350-eng/VScode_study.git
-   cd VScode_study
-   `
-2. VS Code에서 rchive/index.html 파일을 열고 **Live Server** 확장으로 실행하거나, 웹 브라우저에서 직접 rchive/index.html을 클릭하여 실행합니다.
+```bash
+git clone https://github.com/dbd01350-eng/VScode_study.git
+cd VScode_study
+```
+2. VS Code에서 `archive/index.html` 파일을 열고 **Live Server** 확장으로 실행하거나, 웹 브라우저에서 직접 `archive/index.html`을 클릭하여 실행합니다.
 
 ---
 
