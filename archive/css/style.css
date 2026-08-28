@@ -772,14 +772,17 @@ ul, ol { list-style: none; }
 
 /* ─── Responsive ─── */
 @media (max-width: 960px) {
+  :root { --section-py: clamp(40px, 6vw, 70px); }
   .hero-inner { grid-template-columns: 1fr; gap: 0; }
   .hero-profile { display: none; }
+  .hero-sub { margin-bottom: 36px; }
+  .hero-stats { margin-bottom: 36px; padding-bottom: 36px; }
   .about-grid { grid-template-columns: 1fr; }
   .footer-note { text-align: left; }
 }
 
 @media (max-width: 768px) {
-  :root { --nav-h: 56px; }
+  :root { --nav-h: 56px; --section-py: 36px; }
 
   .nav-links {
     display: none;
@@ -795,28 +798,37 @@ ul, ol { list-style: none; }
   .nav-link { width: 100%; padding: 10px 12px; }
   .nav-toggle { display: flex; }
 
-  .hero { padding-top: calc(var(--nav-h) + 40px); min-height: 100svh; }
+  .hero { padding: calc(var(--nav-h) + 24px) var(--section-px) 24px; min-height: auto; }
   .hero-scroll { display: none; }
-  .hero-stats { gap: 24px; }
-  .hero-cta { flex-direction: column; align-items: flex-start; }
+  .hero-sub { margin-bottom: 24px; }
+  .hero-stats { gap: 20px; margin-bottom: 24px; padding-bottom: 24px; }
+  .hero-cta { flex-direction: row; flex-wrap: wrap; gap: 10px; }
 
-  .project-grid { grid-template-columns: 1fr; }
+  .section-header { margin-bottom: 28px; }
+  .archive-section .section-inner { padding-top: 16px; }
+  .project-grid { grid-template-columns: 1fr; gap: 16px; }
 
-  .journey-step { grid-template-columns: 60px 1fr; gap: 20px; padding: 28px 0; }
+  .journey-step { grid-template-columns: 50px 1fr; gap: 16px; padding: 20px 0; }
 
   .modal-content { padding: 24px 20px 32px; }
-  .modal-title { font-size: 1.5rem; }
+  .modal-title { font-size: 1.4rem; }
   .modal-preview { height: 240px; }
 
-  .footer-inner { flex-direction: column; align-items: flex-start; }
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
   .footer-note { text-align: left; max-width: 100%; }
 }
 
 @media (max-width: 480px) {
-  .hero-title { font-size: 2.6rem; }
-  .stat-num { font-size: 2rem; }
+  .hero { padding-top: calc(var(--nav-h) + 16px); padding-bottom: 16px; }
+  .hero-label { margin-bottom: 16px; font-size: 0.75rem; }
+  .hero-title { font-size: 2.4rem; margin-bottom: 18px; }
+  .hero-sub { font-size: 0.92rem; margin-bottom: 20px; }
+  .hero-stats { gap: 16px; margin-bottom: 20px; padding-bottom: 20px; }
+  .stat-num { font-size: 1.8rem; }
+
+  .toolbar { gap: 12px; margin-bottom: 16px; }
   .filter-bar { gap: 6px; }
-  .filter-btn { padding: 6px 14px; font-size: 0.775rem; }
-  .project-card { padding: 20px; }
+  .filter-btn { padding: 6px 12px; font-size: 0.75rem; }
+  .project-card { padding: 18px 16px; }
   .card-footer { flex-wrap: wrap; }
 }
