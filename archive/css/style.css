@@ -771,9 +771,8 @@ ul, ol { list-style: none; }
 
 /* ─── Responsive ─── */
 @media (max-width: 960px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 36px; }
-  .hero-profile { justify-content: center; }
-  .profile-img-wrap { max-width: 320px; aspect-ratio: auto; border-radius: 0; }
+  .hero-inner { grid-template-columns: 1fr; gap: 0; }
+  .hero-profile { display: none; }
   .about-grid { grid-template-columns: 1fr; }
   .footer-note { text-align: left; }
 }
