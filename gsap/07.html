@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url(https://qwerewqwerew.github.io/source/style/reset.css);
+
+      .cont {
+        overflow: hidden;
+      }
+
+      .item {
+        width: clamp(50%, 100%, 100%);
+        height: 100vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5vw;
+      }
+
+      .item:nth-child(2n) {
+        background-color: gray;
+      }
+
+      .num {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        font-size: 5vw;
+        line-height: 1;
+      }
+
+      .box {
+        width: 10vw;
+        height: 10vw;
+        background-color: #ff1515;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .active {
+        filter: hue-rotate(100deg);
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="cont">
+      <section class="sec1 item">
+        <h2 class="num">01</h2>
+        <div class="box"></div>
+      </section>
+      <section class="sec2 item">
+        <h2 class="num">02</h2>
+        <div class="box"></div>
+      </section>
+      <section class="sec3 item">
+        <h2 class="num">03</h2>
+        <div class="box"></div>
+      </section>
+      <section class="sec4 item">
+        <h2 class="num">04</h2>
+        <div class="box"></div>
+      </section>
+      <section class="sec5 item">
+        <h2 class="num">05</h2>
+        <div class="box"></div>
+      </section>
+      <div class="pin-spacer" style="order: 0; place-self: auto; grid-area: auto; z-index: auto; float: none; flex-shrink: 1; display: flex; margin: 0px; inset: 0px; position: relative; flex-basis: auto; overflow: visible; box-sizing: border-box; width: 139px; height: 961px; padding: 0px">
+        <section class="sec6 item" style="translate: none; rotate: none; scale: none; inset: 0px auto auto 0px; margin: 0px; max-width: 139px; width: 139px; max-height: 961px; height: 961px; padding: 0px; transform: translate(0px, 961px)">
+          <h2 class="num">06</h2>
+          <div class="box" style="translate: none; rotate: none; scale: none; border-radius: 100px; transform: translate(500px, 0px) rotate(360deg)"></div>
+        </section>
+      </div>
+      <section class="sec6 item">
+        <h2 class="num">06</h2>
+        <div class="box"></div>
+      </section>
+      <section class="sec7 item">
+        <h2 class="num">07</h2>
+        <div class="box box7"></div>
+      </section>
+      <section class="sec8 item">
+        <h2 class="num">08</h2>
+        <div class="box"></div>
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+    <script>
+      //01.tween
+      gsap.to(".sec1 .box", {
+        duration: 2,
+        x: 500,
+        borderRadius: 100,
+        rotation: 360,
+      });
+      //02.trigger
+      gsap.to(".sec2 .box", {
+        duration: 2,
+        x: 500,
+        borderRadius: 100,
+        rotation: 360,
+        scrollTrigger: {
+          trigger: ".sec2 .box",
+        },
+      });
+      //03.toggleAction
+      gsap.to(".sec3 .box", {
+        duration: 2,
+        x: 500,
+        borderRadius: 100,
+        rotation: 360,
+        scrollTrigger: {
+          trigger: ".sec3 .box",
+          toggleAction: "play none reverse none",
+          markers: true,
+        },
+      });
+      //04. start, end
+      gsap.to(".sec4 .box", {
+        duration: 2,
+        x: 500,
+        borderRadius: 100,
+        rotation: 360,
+        scrollTrigger: {
+          trigger: ".sec4 .box",
+          start: "top 50%",
+          end: "bottom 20%",
+          markers: true,
+        },
+      });
+      //05. scrub
+      gsap.to(".sec5 .box", {
+        duration: 2,
+        x: 500,
+        borderRadius: 100,
+        rotation: 360,
+        scrollTrigger: {
+          trigger: ".sec5 .box",
+          start: "top 50%",
+          end: "bottom 20%",
+          scrub: true,
+          markers: true,
+        },
+      });
+      //06. pin
+      gsap.to(".sec6 .box", {
+        duration: 2,
+        x: 500,
+        borderRadius: 100,
+        rotation: 360,
+        scrollTrigger: {
+          trigger: ".sec6 .box",
+          start: "top 50%",
+          end: "bottom 20%",
+          pin: true,
+          pinSpacing: false,
+          scrub: true,
+          markers: true,
+        },
+      });
+      //07.toggleClass
+      gsap.to(".sec7 .box", {
+        duration: 2,
+        scrollTrigger: {
+          trigger: ".sec7",
+          start: "top top",
+          end: "bottom top",
+          toggleClass: "active",
+        },
+      });
+      //08.callback
+      gsap.to(".sec8 .box", {
+        duration: 2,
+        x: 500,
+        borderRadius: 100,
+        rotation: 360,
+        scrollTrigger: {
+          trigger: ".sec8 .box",
+          start: "top 80%",
+          end: "bottom 20%",
+          scrub: true,
+          onEnter: () => {
+            document.querySelector(".sec8 .num").textContent = "end";
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

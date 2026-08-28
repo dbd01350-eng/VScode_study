@@ -1,0 +1,90 @@
+@charset 'UTF-8';
+@import url('./reset.css');
+section:nth-child(odd) {
+  background: #ebebeb;
+}
+section {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  position: relative;
+  z-index: 555;
+  background: rgba(255, 255, 255, 0.2);
+  display: inline-flex;
+  padding: 5%;
+  backdrop-filter: blur(20px);
+  filter: blur(20px);
+  transition: filter 0.5s;
+  cursor: pointer;
+}
+h2:hover {
+  filter: blur(0px);
+}
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+.sec1::before {
+  background: purple;
+  background: url('http://qwerew.cafe24.com/images/1.jpg') no-repeat;
+  background-size: cover;
+  content: '';
+  position: absolute;
+  width: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 50% 50% 0%;
+}
+.sec2::before {
+  background: url('http://qwerew.cafe24.com/images/2.jpg') no-repeat;
+  background-size: cover;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 50% 50% 0%;
+}
+.sec3::before {
+  background: url('http://qwerew.cafe24.com/images/3.jpg') no-repeat;
+  background-size: cover;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 50% 50% 0%;
+}
+.sec4::before {
+  background: url('http://qwerew.cafe24.com/images/4.jpg') no-repeat;
+  background-size: cover;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 50% 50% 0%;
+}
+.sec5::before {
+  background: url('http://qwerew.cafe24.com/images/5.jpg') no-repeat;
+  background-size: cover;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 50% 50% 0%;
+}
+.sec1::after {
+  content: '';
+  background: red;
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: 50vh;
+  border-radius: 100%;
+  z-index: 555;
+  filter: opacity(.5) blur(5px);
+  mix-blend-mode:overlay;
+}

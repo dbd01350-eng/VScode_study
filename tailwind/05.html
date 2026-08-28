@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <nav class="flex bg-gray-900 text-white px-6 py-4 items-center justify-between">
+      <!-- px -> 패딩 x축으로 주기 
+           py -> 패딩 y축으로 주기 -->
+      <h1 class="text-3xl font-bold text-blue-600">Logo</h1>
+      <div class="flex gap-6">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">content</a>
+      </div>
+    </nav>
+
+    <div class="m-4 flex gap-[5px]">
+      <!-- 대괄호 사용시 사용자 지정 사이즈 가능 -->
+      <div class="p-4 w-3/3 bg-pink-500 text-white rounded-lg">카드 1</div>
+      <div class="p-4 w-1/3 bg-pink-500 text-white rounded-lg">카드 2</div>
+      <div class="p-4 w-1/3 bg-pink-500 text-white rounded-lg">카드 3</div>
+    </div>
+    <!-- flex 적용 -->
+
+    <div class="grid grid-cols-3 gap-4 m-4 bg-red-100">
+      <!-- grid container -->
+      <div class="p-4 bg-blue-500 text-white rounded-lg col-span-2">1</div>
+      <!-- grid item -->
+      <div class="p-4 bg-blue-500 text-white rounded-lg">2</div>
+      <div class="p-4 bg-blue-500 text-white rounded-lg">3</div>
+      <div class="p-4 bg-blue-500 text-white rounded-lg sm:col-span-2 lg:col-span-3">4</div>
+      <div class="p-4 bg-blue-500 text-white rounded-lg sm:col-span-3">5</div>
+      <div class="p-4 bg-blue-500 text-white rounded-lg sm:col-span-3">6</div>
+    </div>
+
+    <div class="container mx-auto bg-gray-200">
+        <div class="grid grid-cols-12 gap-4">
+            <div class="bg-blue-300 col-span-12 xl:col-span-6">1</div>
+            <div class="bg-blue-300 col-span-12 xl:col-span-6">2</div>
+        </div>
+    </div>
+
+  </body>
+</html>

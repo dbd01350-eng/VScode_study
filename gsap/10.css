@@ -1,0 +1,47 @@
+@charset 'UTF-8';
+@import url('./reset.css');
+body {
+  overflow: hidden;
+}
+.sec {
+  position: fixed;
+  background: ivory;
+  /* top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; */
+  inset: 0;
+  /* fixed, absolute 부모기준으로 꽉채우는 단축속성 */
+  /* width: 100vw;
+  height: 100vh; */
+}
+.sec:nth-child(even) {
+  background: #ebebeb;
+}
+h2 {
+  font-size: 3rem;
+}
+.nav {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  transform: translateY(-50%);
+}
+.nav button {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: transparent;
+  border:2px dashed navy;
+  border-radius: 100% 20%;
+  cursor:pointer;
+  opacity: 0.5;
+
+}
+
+.nav button.on{
+  opacity: 1;
+}

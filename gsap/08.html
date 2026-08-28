@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @import url(https://qwerewqwerew.github.io/source/style/reset.css);
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111827;
+      color: white;
+    }
+
+    .demo {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .panel {
+      position: relative;
+      height: 160vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: linear-gradient(180deg, #0f172a, #111827 50%, #0b1020);
+    }
+
+    .panel:nth-child(2n) {
+      background: linear-gradient(180deg, #1f2937, #0f172a 50%, #111827);
+    }
+
+    .stack {
+      position: relative;
+      width: min(44vw, 420px);
+      height: min(52vw, 520px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 28px;
+      font-size: clamp(2rem, 4vw, 4rem);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.95);
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+      background: linear-gradient(135deg, rgba(59,130,246,0.9), rgba(167,139,250,0.85));
+    }
+
+    .card:nth-child(2) {
+      background: linear-gradient(135deg, rgba(16,185,129,0.9), rgba(6,182,212,0.85));
+    }
+
+    .card:nth-child(3) {
+      background: linear-gradient(135deg, rgba(251,191,36,0.9), rgba(249,115,22,0.85));
+    }
+
+    .card:nth-child(4) {
+      background: linear-gradient(135deg, rgba(244,114,182,0.9), rgba(168,85,247,0.9));
+    }
+
+    .label {
+      position: absolute;
+      left: 2rem;
+      top: 2rem;
+      z-index: 2;
+      font-size: clamp(0.8rem, 1.8vw, 1.2rem);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="demo">
+    <section class="panel">
+      <div class="label">scroll</div>
+      <div class="stack">
+        <div class="card">01</div>
+        <div class="card">02</div>
+        <div class="card">03</div>
+        <div class="card">04</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="label">trigger</div>
+      <div class="stack">
+        <div class="card">A</div>
+        <div class="card">B</div>
+        <div class="card">C</div>
+        <div class="card">D</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="label">scrub</div>
+      <div class="stack">
+        <div class="card">X</div>
+        <div class="card">Y</div>
+        <div class="card">Z</div>
+        <div class="card">W</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger)
+
+    gsap.utils.toArray('.panel').forEach((panel) => {
+      const cards = panel.querySelectorAll('.card')
+
+      gsap.set(cards, {
+        x: 0,
+        y: 0,
+        rotate: 0,
+        scale: 1,
+        opacity: 1,
+        transformOrigin: 'center center'
+      })
+
+      const time = gsap.timeline({
+        scrollTrigger: {
+          trigger: panel,
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 1.2,
+          pin: true,
+          pinSpacing: false
+        }
+      })
+
+      time
+        .to(cards[0], { x: -120, y: 70, rotate: -18, duration: 1 }, 0)
+        .to(cards[1], { x: 0, y: 0, rotate: 0, scale: 1.04, duration: 1 }, 0.2)
+        .to(cards[2], { x: 130, y: -80, rotate: 18, duration: 1 }, 0.4)
+        .to(cards[3], { x: 240, y: -150, rotate: 28, duration: 1 }, 0.6)
+        .to(panel.querySelector('.label'), { opacity: 0.2, y: -20, duration: 1 }, 0)
+    })
+  </script>
+</body>
+
+</html>

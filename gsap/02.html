@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @import url('https://codepen.io/GreenSock/pen/xxmzBrw/fcaef74061bb7a76e5263dfc076c363e.css');
+
+    /* Global styles come from external css https://codepen.io/GreenSock/pen/xxmzBrw/fcaef74061bb7a76e5263dfc076c363e.css
+ */
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box gradient-green green"></div>
+  <div class="box gradient-purple purple"></div>
+  <div class="box gradient-blue blue"></div>
+  <div class="box gradient-red red"></div>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+  <script>
+    gsap.from('.box.green', { x: 200 })
+    gsap.from('.box.purple', { duration: 3, delay: 0.5, x: 200, rotate: 360 })
+    gsap.from('.box.blue', { yoyo: true, repeat: 3, duration: 3, delay: 3, y: -500, scale: 1.5, width: 300, rotate: 90 })
+    gsap.fromTo('.red', { opacity: 0, backgroundColor: 'red', }, { duration: 2, opacity: 1, x:"15vw",backgroundColor: 'green' ,ease:'steps(10)'})
+  </script>
+</body>
+
+</html>
