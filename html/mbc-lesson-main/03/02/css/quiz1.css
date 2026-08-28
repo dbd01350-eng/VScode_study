@@ -1,0 +1,44 @@
+/* 전체선택자: 여백초기화, 웹브라우저의 기본스타일 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  padding: 20px;
+}
+/* 그룹선택자 */
+h2,
+span {
+  color: red;
+}
+/* 태그선택자 */
+h1 {
+  background-color: beige;
+}
+/* 아이디선택자 */
+#container {
+  background-color: gainsboro;
+  padding: 10px;
+}
+
+/* 클래스선택자 */
+.tea1 {
+  background: beige;
+}
+/* 하위선택자 */
+li p {
+  color: green;
+}
+/* 자식선택자 */
+p > span {
+  color: blue;
+}
+/* 인접선택자 */
+.tea2 + li {
+  color: brown;
+  background-color: white;
+}
+/* 형제선택자 */
+p ~ ul {
+    padding:30px;
+}

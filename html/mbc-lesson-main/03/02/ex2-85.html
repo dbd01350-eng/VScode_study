@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>grid 영역 배치</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      header,
+      nav,
+      main,
+      footer {
+        padding: 20px;
+      }
+      header {
+        background: #f99;
+      }
+      nav {
+        background: #9f9;
+      }
+      main {
+        background: #99f;
+      }
+      footer {
+        background: #ff9;
+      }
+      .grid-layout {
+        display: grid;
+        min-height: 300px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto 1fr auto;
+        gap: 10px;
+        grid-template-areas:
+          "header header header"
+          "nav main main"
+          "footer  footer footer";
+      }
+      header {
+        grid-area: header;
+      }
+      nav {
+        grid-area: nav;
+      }
+      main {
+        grid-area:main;
+      }
+      
+      footer {
+        grid-area:footer;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="grid-layout">
+      <header>Header</header>
+      <nav>Nav</nav>
+      <main>Main</main>
+      <footer>Footer</footer>
+    </div>
+  </body>
+</html>

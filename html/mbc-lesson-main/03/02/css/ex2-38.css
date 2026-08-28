@@ -1,0 +1,24 @@
+@charset "UTF-8";
+@import url('./reset.css');
+html {
+  overflow-y: hidden;
+  overflow-y: scroll;
+}
+h3 {
+  font-weight: 800;
+  font-size: 2em;
+}
+.agree {
+  font-size: 1.2em;
+  width: 500px;
+  height: 580px;
+  border: 1px solid;
+  white-space: nowrap;
+  /* overflow: auto; */
+  overflow-y: visible;
+  overflow-x: hidden;
+  overflow-x: scroll;
+  /* visible : 컨텐츠 다 보임*/
+  /* hidden : 컨텐츠 잘림*/
+  /* scroll : 컨텐츠 잘리고 스크롤 생김*/
+}

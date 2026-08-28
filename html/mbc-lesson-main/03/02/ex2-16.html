@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>동적 가상 클래스 선택자</title>
+    <style>
+      input:hover {
+        border: 3px solid red;
+        background: pink;
+      }
+      input:focus {
+        border: none;
+        outline: 4px dashed green;
+        background: red;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>동적 관련 가상 클래스 선택자</h1>
+    <hr />
+    <h2>로그인</h2>
+
+    <div>
+      <form>
+        <div>
+          <label for="uid">아이디</label>
+          <input type="text" id="uid" />
+        </div>
+        <div>
+          <label for="upw">비밀번호</label>
+          <input type="password" id="upw" />
+        </div>
+        <button type="submit">login</button>
+      </form>
+    </div>
+  </body>
+</html>

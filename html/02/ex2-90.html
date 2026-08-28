@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mostly Fluid</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      #wrap {
+        display: flex;
+        gap: 20px;
+        /* width: 960px; */
+        width: 100%;
+        max-width: 960px;
+        background-color: gray;
+        margin: 0 auto;
+      }
+      /* 뷰포트 폭이 0~960일때 #wrap 너비는 100% 
+        @media screen and (max-width: 960px) {
+            #wrap {
+            width: 100%;
+            }
+        }
+        */
+      #content {
+        background-color: yellow;
+        /* flex-item 박스의 가변 크기 지정, 남은 공간을 얼마나 가져갈지 비율로 정함. */
+        flex-grow: 1;
+        /* width와 거의 비슷하지만 flex 속성 전용 사이즈라고 생각하면 편함 width보다 flex-basis 우선 적용*/
+        flex-basis: 600px;
+        /* 공간이 부족할 때 본인의 공간을 얼마나 줄일지 비율로 정함. */
+        flex-shrink: 1;
+        /* flex-grow: 1;
+           flex-shrink: 1;
+           flex-basis: 25%;
+           축약 */
+        flex: 1 1 25%;
+      }
+      #aside {
+        background-color: orange;
+        flex-grow: 1;
+        flex-basis: 400px;
+        flex-shrink: 1;
+        flex: 1 1 35%;
+      }
+      @media screen and (max-width: 600px) {
+        #wrap {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="content">Content</div>
+      <div id="aside">Aside</div>
+    </div>
+  </body>
+</html>

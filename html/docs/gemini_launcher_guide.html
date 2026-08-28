@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini CLI 런처 사용 설명서</title>
+    <style>
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #f8f9fa;
+        }
+        h1 {
+            color: #1a73e8;
+            border-bottom: 2px solid #1a73e8;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        h2 {
+            color: #202124;
+            margin-top: 30px;
+            border-left: 5px solid #1a73e8;
+            padding-left: 15px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .method {
+            background: #e8f0fe;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .method h3 {
+            margin-top: 0;
+            color: #1967d2;
+        }
+        code {
+            background-color: #f1f3f4;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: 'Consolas', monospace;
+            font-weight: bold;
+        }
+        .tip {
+            background-color: #fff4e5;
+            border-left: 5px solid #ffa000;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #70757a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gemini CLI 런처 사용 설명서</h1>
+        <p>생성된 <code>gemini-launcher.bat</code> 파일을 사용하여 원하는 경로에서 Gemini CLI를 빠르고 간편하게 실행하는 방법을 안내합니다.</p>
+
+        <h2>주요 실행 방법</h2>
+
+        <div class="method">
+            <h3>1. 드래그 앤 드롭 (가장 간편한 방법)</h3>
+            <p>Windows 탐색기에서 <strong>원하는 폴더</strong>를 마우스로 잡고 <code>gemini-launcher.bat</code> 파일 위로 끌어다 놓으세요.</p>
+            <ul>
+                <li>해당 폴더 경로에서 즉시 Gemini CLI가 실행됩니다.</li>
+            </ul>
+        </div>
+
+        <div class="method">
+            <h3>2. 직접 경로 입력</h3>
+            <p><code>gemini-launcher.bat</code> 파일을 더블 클릭하여 실행합니다.</p>
+            <ol>
+                <li>콘솔 창에 <code>Path:</code> 라는 문구가 뜹니다.</li>
+                <li>원하는 전체 경로(예: <code>C:\Users\Documents\MyProject</code>)를 복사해서 붙여넣고 <strong>Enter</strong>를 누르세요.</li>
+            </ol>
+        </div>
+
+        <div class="method">
+            <h3>3. 현재 폴더에서 실행</h3>
+            <p><code>gemini-launcher.bat</code> 파일이 위치한 폴더에서 바로 작업을 시작하고 싶을 때 사용합니다.</p>
+            <ul>
+                <li>파일을 더블 클릭한 후, 경로를 입력하지 않고 바로 <strong>Enter</strong>를 누르세요.</li>
+            </ul>
+        </div>
+
+        <h2>활용 팁</h2>
+        <div class="tip">
+            <strong>💡 바탕화면 바로가기 만들기</strong><br>
+            <code>gemini-launcher.bat</code> 파일을 우클릭하여 <strong>[보내기] -> [바탕화면에 바로가기 만들기]</strong>를 선택하세요. 이제 폴더를 작업표시줄이나 바탕화면의 아이콘으로 끌어다 놓기만 하면 어디서든 Gemini를 소환할 수 있습니다!
+        </div>
+
+        <div class="tip">
+            <strong>⚠️ 참고 사항</strong><br>
+            입력한 경로에 한글이나 공백이 포함되어 있어도 큰따옴표 없이 입력하거나 붙여넣으시면 스크립트가 자동으로 처리합니다.
+        </div>
+
+        <div class="footer">
+            © 2026 Gemini CLI Launcher Guide
+        </div>
+    </div>
+</body>
+</html>

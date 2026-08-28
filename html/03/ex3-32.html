@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>타이머 함수</title>
+  </head>
+  <body>
+    <h1>시간이후</h1>
+
+    <pre><h2>   setTimeout(콜백함수, 시간); 지정된 시간 이후 함수 호출</h2></pre>
+
+    <script>
+      let num1 = 5;
+      const timer1 = () => {
+        document.write(`${num1}초 지남`);
+      };
+      const stop1 = setTimeout(timer1, num1 * 1000);
+      clearTimeout(stop1);
+    </script>
+
+    <h1>간격실행</h1>
+    <pre><h2>   setInterval(콜백함수, 시간);
+   clearInterval(setIntervalID)
+        </h2>
+    </pre>
+    <script>
+      let num2 = 1;
+      const timer2 = () => {
+        document.write(`${num2}초 마다 실행<br>`);
+      };
+      const stop2 = setInterval(timer2, num2 * 1000);
+      clearTimeout(stop2);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    background-color: #FFFFFF; /* Figma Frame 27 background is white */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Backdrop - Frame 27 has no overlay, just a white background */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Action Sheet Container */
+.action-sheet {
+    position: relative;
+    background: rgba(255, 255, 255, 0.95); /* Light translucent white */
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    width: 300px;
+    border-radius: 34px; 
+    padding: 14px;
+    box-shadow: 0px 8px 40px 0px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Title and Description Section */
+.action-sheet-header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 8px 24px 8px;
+    text-align: center;
+}
+
+.action-sheet-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: #000000;
+    line-height: 22px;
+    letter-spacing: -0.43px;
+}
+
+.action-sheet-description {
+    font-size: 13px;
+    font-weight: 400;
+    color: #8E8E93; /* Accurate iOS gray for description */
+    line-height: 18px;
+    letter-spacing: -0.08px;
+}
+
+/* Buttons Container */
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Action Buttons */
+.action-button {
+    width: 100%;
+    height: 48px;
+    background-color: rgba(120, 120, 128, 0.12); /* Light gray button fill */
+    border: none;
+    border-radius: 100px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    letter-spacing: -0.43px;
+}
+
+.action-button:active {
+    background-color: rgba(120, 120, 128, 0.24);
+}
+
+/* Destructive Type */
+.action-button.destructive {
+    color: #FF3B30; /* iOS System Red */
+}

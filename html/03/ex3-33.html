@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>변수의 스코프와 호이스팅</title>
+  </head>
+  <body>
+    <script>
+      addNumber();
+      function addNumber() {
+        //실행문
+        console.log(1 + 2);
+      }
+    </script>
+    <script>
+      //변수나 함수의 유효범위 -> scope
+      //코드 블록내에 선언된 변수 -> 지역변수
+      var sum = "전역변수";
+      function addNumber1() {
+        var sum = 10 + 20;
+      }
+      addNumber1();
+      console.log(sum);
+    </script>
+    <script>
+      var x = 10;
+      function displayNumber() {
+        console.log("x is " + x);
+        console.log("y is " + y);
+        var y = 20;
+      }
+      displayNumber();
+    </script>
+  </body>
+</html>

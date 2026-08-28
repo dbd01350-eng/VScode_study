@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let gender = prompt('성별입력:', "")
+    let age = prompt("나이:", "")
+    // 20대여성(19<age) 20이상이고 30미만
+    let result = age >= 20 && age < 30 && gender == '여성'
+    document.write(result)
+  </script>
+</body>
+
+</html>

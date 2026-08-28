@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AND, NOT 문</title>
+  </head>
+  <body>
+    <script>
+      let num1 = prompt("50미만 숫자 입력해");
+      let num2 = prompt("50미만 숫자 입력해");
+      if (num1 == '' || num2 == '') {
+        alert("제대로 입력이 되지 않았습니다.");
+      }
+      else if (num1 !== null && num2 !== null) {
+        if (num1 < 50 && num2 < 50) {
+          alert("모두 50보다 작아");
+        } else {
+          alert("여기 50보다 큰 수가 있어");
+        }
+      } else {
+        alert("제대로 입력이 되지 않았습니다.");
+      }
+    </script>
+  </body>
+</html>

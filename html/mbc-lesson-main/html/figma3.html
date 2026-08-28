@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Flower - Menu Poster</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fdfbf7;
+            --text-main: #2d2926;
+            --accent-color: #b08d57;
+            --font-serif: 'Bodoni Moda', 'Nanum Myeongjo', serif;
+            --font-sans: 'Noto Sans KR', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 50px;
+            font-family: var(--font-sans);
+        }
+
+        .poster {
+            width: 800px;
+            height: 1100px;
+            background-color: var(--bg-color);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            position: relative;
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Decorative Border */
+        .poster::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 1px solid rgba(176, 141, 87, 0.3);
+            pointer-events: none;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        header h1 {
+            font-family: var(--font-serif);
+            font-size: 72px;
+            font-weight: 700;
+            color: var(--text-main);
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 16px;
+            color: var(--accent-color);
+            letter-spacing: 8px;
+            font-weight: 500;
+        }
+
+        .main-content {
+            display: flex;
+            flex: 1;
+            gap: 60px;
+        }
+
+        .menu-section {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .image-section {
+            flex: 1;
+            position: relative;
+        }
+
+        .coffee-image {
+            width: 100%;
+            height: 550px;
+            background-image: url('cafe.png'); /* 사용자가 제공한 cafe2.png 또는 cafe.png 사용 */
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .coffee-image::after {
+            content: '';
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 100px;
+            height: 100px;
+            background: url('https://www.svgrepo.com/show/475013/flower.svg') no-repeat center;
+            background-size: contain;
+            opacity: 0.6;
+            filter: sepia(1) saturate(0.5) hue-rotate(10deg);
+        }
+
+        .menu-group h2 {
+            font-family: var(--font-serif);
+            font-size: 26px;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .menu-group h2::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, var(--accent-color), transparent);
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 19px;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .menu-item::after {
+            content: '....................................................................................................';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 4px;
+            z-index: -1;
+            color: #eee;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .menu-item .name, .menu-item .price {
+            background-color: var(--bg-color);
+            padding: 0 5px;
+        }
+
+        .menu-item .name {
+            font-weight: 500;
+        }
+
+        .menu-item .price {
+            font-family: var(--font-serif);
+            font-style: italic;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            border-top: 1px solid #eee;
+            padding-top: 40px;
+        }
+
+        .footer-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* Floating Flower Decorations (Optional SVG) */
+        .flower-dec {
+            position: absolute;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .flower-1 { top: -50px; right: -50px; width: 200px; }
+        .flower-2 { bottom: -30px; left: -30px; width: 150px; }
+
+    </style>
+</head>
+<body>
+    <div class="poster">
+        <header>
+            <h1>Cafe Flower</h1>
+            <p>FLOWER CAFE & STUDIO</p>
+        </header>
+
+        <div class="main-content">
+            <div class="menu-section">
+                <div class="menu-group">
+                    <h2>SIGNATURE</h2>
+                    <div class="menu-item">
+                        <span class="name">Flower Tea</span>
+                        <span class="price">6.5</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="name">Rose Latte</span>
+                        <span class="price">7.0</span>
+                    </div>
+                </div>
+
+                <div class="menu-group">
+                    <h2>COFFEE</h2>
+                    <div class="menu-item">
+                        <span class="name">Americano</span>
+                        <span class="price">5.0</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="name">Cafe Latte</span>
+                        <span class="price">5.5</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="name">Vanilla Latte</span>
+                        <span class="price">6.0</span>
+                    </div>
+                </div>
+
+                <div class="menu-group">
+                    <h2>TEA</h2>
+                    <div class="menu-item">
+                        <span class="name">Chamomile</span>
+                        <span class="price">5.5</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="name">Earl Grey</span>
+                        <span class="price">5.5</span>
+                    </div>
+                </div>
+
+                <div class="menu-group">
+                    <h2>DESSERT</h2>
+                    <div class="menu-item">
+                        <span class="name">Flower Cake</span>
+                        <span class="price">8.5</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="name">Scone</span>
+                        <span class="price">4.5</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="image-section">
+                <div class="coffee-image"></div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-info">
+                <span>123 Flower Street, Seoul</span>
+                <span>02-123-4567</span>
+                <span>@cafeflower_official</span>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

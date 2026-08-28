@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Grid Layout</title>
+    <style>
+      /* 행 높이를 자동으로 지정하기 */
+      .container {
+        width: 600px;
+        border: 1px solid #ccc;
+        display: grid;
+        /* 그리드 컨테이너 지정 */
+        grid-template-columns: repeat(3, 1fr);
+        /* 너비가 같은 열 3개 */
+        /* 행 높이 최소 100px, 최대 auto */
+        grid-auto-rows: minmax(100px, auto);
+      }
+
+      .items {
+        padding: 10px;
+        font-size: 16px;
+      }
+
+      .items:nth-child(odd) {
+        background-color: #ffc400;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="items">짧은 내용</div>
+      <div class="items">두 줄 이상으로 늘어날 수 있는 조금 긴 내용이다.</div>
+      <div class="items">짧은 내용</div>
+      <div class="items">내용이 길어지면 100px을 넘어 필요한 높이만큼 행이 늘어난다. 여러 문장을 넣어 실제 높이 변화를 확인한다.</div>
+      <div class="items">짧은 내용</div>
+      <div class="items">중간 길이의 내용이다.</div>
+    </div>
+  </body>
+</html>

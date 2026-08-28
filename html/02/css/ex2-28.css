@@ -1,0 +1,21 @@
+@charset "UTF-8";
+@import url('font.css');
+
+p {
+  /* 10px 위아래마진 110px 좌우마진 */
+  margin: 10px 110px;
+  border: 1px solid crimson;
+  padding: 10px;
+}
+.txt1{
+    text-align: left;
+}
+.txt2{
+    text-align: right;
+}
+.txt3{
+    text-align: center;
+}
+.txt4{
+    text-align: justify;
+}

@@ -1,0 +1,12 @@
+@charset "UTF-8";
+@import url('font.css');
+
+p{
+    padding: 10px 50px;
+    text-indent: 20px;
+    /* 들여쓰기 */
+}
+.paper{
+    text-indent: -20px;
+    text-indent: -9999999999px;
+}

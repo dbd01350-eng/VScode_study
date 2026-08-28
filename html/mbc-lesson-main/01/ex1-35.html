@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>span</title>
+  </head>
+  <body>
+    <pre>
+      html 태그의 마크업 규칙   
+      블럭레벨 > 인라인레벨
+      단 div 는 예외
+      h2>p X    => h2>div O
+      p>h1 X    => p>div   O
+      ul>li>p X => ul>li>div O
+    </pre>
+    <span>작은div</span>
+    <span>의미 없는 인라인 레벨의 그룹핑 </span>
+    <h2>
+      <p>test</p>
+    </h2>
+  </body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌈 웹개발 파일 & 폴더 네이밍 규칙</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 40px 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .rule-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 5px solid;
+            transition: transform 0.2s;
+        }
+
+        .rule-card:hover {
+            transform: translateX(5px);
+        }
+
+        .rule-card.good {
+            border-left-color: #28a745;
+            background: #f0fff4;
+        }
+
+        .rule-card.bad {
+            border-left-color: #dc3545;
+            background: #fff5f5;
+        }
+
+        .rule-card.tip {
+            border-left-color: #ffc107;
+            background: #fffbeb;
+        }
+
+        .rule-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .good .rule-title { color: #28a745; }
+        .bad .rule-title { color: #dc3545; }
+        .tip .rule-title { color: #d97706; }
+
+        .example-box {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.95em;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .good-example {
+            color: #28a745;
+            border: 2px solid #28a745;
+        }
+
+        .bad-example {
+            color: #dc3545;
+            border: 2px solid #dc3545;
+            text-decoration: line-through;
+        }
+
+        .folder-tree {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            border-radius: 12px;
+            padding: 20px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            line-height: 1.8;
+            overflow-x: auto;
+        }
+
+        .folder-tree pre {
+            margin: 0;
+            white-space: pre;
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+        }
+
+        .folder-tree .folder { color: #4fc1ff; }
+        .folder-tree .file { color: #ce9178; }
+        .folder-tree .comment { color: #6a9955; }
+
+        .emoji-big {
+            font-size: 1.5em;
+        }
+
+        .check-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .check-list li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .check-list li::before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+
+        .warning-list li::before {
+            content: "❌";
+        }
+
+        .summary-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        .summary-box h2 {
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .summary-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .summary-box li {
+            padding: 5px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .summary-box li::before {
+            content: "⭐";
+            position: absolute;
+            left: 0;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 { font-size: 1.5em; }
+            .content { padding: 15px; }
+            .rule-card { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌈 웹개발 파일 & 폴더 네이밍 규칙</h1>
+            <p>초등학생도 쉽게 이해하는 네이밍 규칙 가이드!</p>
+        </div>
+
+        <div class="content">
+            <!-- 규칙 1 -->
+            <div class="rule-card good">
+                <div class="rule-title">
+                    <span class="emoji-big">1️⃣</span>
+                    <span>소문자만 사용해요!</span>
+                </div>
+                <p>파일명과 폴더명은 모두 <strong>소문자</strong>로 써요. 대문자와 소문자를 섞으면 컴퓨터가 헷갈려할 수 있어요.</p>
+                <div class="example-box good-example">
+                    ✅ about.html &nbsp;&nbsp; ✅ my-style.css &nbsp;&nbsp; ✅ images/
+                </div>
+                <div class="example-box bad-example">
+                    ❌ About.HTML &nbsp;&nbsp; ❌ MyStyle.CSS &nbsp;&nbsp; ❌ IMAGES/
+                </div>
+            </div>
+
+            <!-- 규칙 2 -->
+            <div class="rule-card good">
+                <div class="rule-title">
+                    <span class="emoji-big">2️⃣</span>
+                    <span>띄어쓰기는 하이픈(-)으로!</span>
+                </div>
+                <p>띄어쓰기 대신 <strong>하이픈(-)</strong>을 사용해요. 띄어쓰기는 웹 주소에서 이상하게 보일 수 있어요.</p>
+                <div class="example-box good-example">
+                    ✅ my-home-page.html &nbsp;&nbsp; ✅ contact-us.css &nbsp;&nbsp; ✅ my-profile.jpg
+                </div>
+                <div class="example-box bad-example">
+                    ❌ my home page.html &nbsp;&nbsp; ❌ contact us.css &nbsp;&nbsp; ❌ my profile.jpg
+                </div>
+            </div>
+
+            <!-- 규칙 3 -->
+            <div class="rule-card good">
+                <div class="rule-title">
+                    <span class="emoji-big">3️⃣</span>
+                    <span>언더스코어(_)는 폴더용으로!</span>
+                </div>
+                <p>폴더명에는 <strong>언더스코어(_)</strong>를 써도 괜찮아요. 하지만 파일명에는 하이픈(-)을 쓰는 게 더 예뻐요.</p>
+                <div class="example-box good-example">
+                    ✅ assets_images/ &nbsp;&nbsp; ✅ old_files/ &nbsp;&nbsp; ✅ backup_data/
+                </div>
+                <div class="example-box bad-example">
+                    ❌ assets-images/ (폴더는 _가 더 좋아요) &nbsp;&nbsp; ❌ old-files/
+                </div>
+            </div>
+
+            <!-- 규칙 4 -->
+            <div class="rule-card bad">
+                <div class="rule-title">
+                    <span class="emoji-big">4️⃣</span>
+                    <span>특수문자는 피해요!</span>
+                </div>
+                <p>한글, !, @, #, $, %, &, *, (, ), +, =, ?, /, \ 같은 특수문자는 쓰지 마세요. 컴퓨터가 못 알아들을 수 있어요!</p>
+                <div class="example-box bad-example">
+                    ❌ 내홈페이지.html &nbsp;&nbsp; ❌ file@home!.css &nbsp;&nbsp; ❌ image#1.jpg &nbsp;&nbsp; ❌ what?.js
+                </div>
+                <div class="example-box good-example">
+                    ✅ my-homepage.html &nbsp;&nbsp; ✅ file-home.css &nbsp;&nbsp; ✅ image-1.jpg
+                </div>
+            </div>
+
+            <!-- 규칙 5 -->
+            <div class="rule-card good">
+                <div class="rule-title">
+                    <span class="emoji-big">5️⃣</span>
+                    <span>의미있는 이름으로!</span>
+                </div>
+                <p>파일이 뭔지 알 수 있게 <strong>의미있는 이름</strong>을 지어요. a.html, b.css 같은 이름은 나중에 까먹어요.</p>
+                <div class="example-box good-example">
+                    ✅ index.html (첫 페이지) &nbsp;&nbsp; ✅ main-style.css (메인 스타일) &nbsp;&nbsp; ✅ logo.png (로고 이미지)
+                </div>
+                <div class="example-box bad-example">
+                    ❌ a.html &nbsp;&nbsp; ❌ 1.css &nbsp;&nbsp; ❌ x.jpg &nbsp;&nbsp; ❌ new.html (무슨 new?)
+                </div>
+            </div>
+
+            <!-- 규칙 6 -->
+            <div class="rule-card tip">
+                <div class="rule-title">
+                    <span class="emoji-big">6️⃣</span>
+                    <span>확장자는 꼭 붙여요!</span>
+                </div>
+                <p>파일의 종류를 알려주는 <strong>확장자</strong>를 빠뜨리지 마세요. 컴퓨터가 어떤 파일인지 알아야 해요.</p>
+                <ul class="check-list">
+                    <li>HTML 파일: <code>.html</code> (예: index.html)</li>
+                    <li>CSS 파일: <code>.css</code> (예: style.css)</li>
+                    <li>JavaScript 파일: <code>.js</code> (예: script.js)</li>
+                    <li>이미지 파일: <code>.jpg</code>, <code>.png</code>, <code>.gif</code>, <code>.svg</code></li>
+                </ul>
+            </div>
+
+            <!-- 폴더 구조 예시 -->
+            <div class="rule-card tip">
+                <div class="rule-title">
+                    <span class="emoji-big">7️⃣</span>
+                    <span>폴더는 깔끔하게 정리해요!</span>
+                </div>
+                <p>비슷한 파일끼리 <strong>폴더</strong>에 모아두면 찾기 쉬워요. 아래는 예쁜 폴더 구조예요:</p>
+                <div class="folder-tree">
+<pre><span class="folder">📁 my-website/</span>          <span class="comment">&lt;-- 웹사이트 메인 폴더</span>
+├── <span class="file">index.html</span>              <span class="comment">&lt;-- 첫 페이지 (꼭 있어야 해요!)</span>
+├── <span class="file">about.html</span>              <span class="comment">&lt;-- 소개 페이지</span>
+├── <span class="file">contact.html</span>            <span class="comment">&lt;-- 연락처 페이지</span>
+├── <span class="folder">📁 css/</span>                 <span class="comment">&lt;-- 스타일 파일 모음</span>
+│   ├── <span class="file">main-style.css</span>
+│   └── <span class="file">reset.css</span>
+├── <span class="folder">📁 js/</span>                  <span class="comment">&lt;-- 자바스크립트 파일 모음</span>
+│   ├── <span class="file">main-script.js</span>
+│   └── <span class="file">animation.js</span>
+├── <span class="folder">📁 images/</span>              <span class="comment">&lt;-- 이미지 파일 모음</span>
+│   ├── <span class="file">logo.png</span>
+│   ├── <span class="file">hero-banner.jpg</span>
+│   └── <span class="file">icon-menu.svg</span>
+└── <span class="folder">📁 fonts/</span>               <span class="comment">&lt;-- 글꼴 파일 모음</span>
+    └── <span class="file">my-font.woff2</span></pre>
+                </div>
+            </div>
+
+            <!-- 추가 팁 -->
+            <div class="rule-card tip">
+                <div class="rule-title">
+                    <span class="emoji-big">💡</span>
+                    <span>보너스 팁!</span>
+                </div>
+                <ul class="check-list">
+                    <li>숫자로 시작하지 마세요 (❌ 1page.html → ✅ page-1.html)</li>
+                    <li>이름은 짧고 간단하게! (❌ this-is-my-very-long-file-name-for-home-page.html)</li>
+                    <li>버전 표시는 날짜로! (✅ report-2024-05-19.pdf)</li>
+                    <li>index.html은 항상 메인 폴더에!</li>
+                    <li>파일명에 공백 2개 이상 넣지 마세요</li>
+                </ul>
+            </div>
+
+            <!-- 요약 -->
+            <div class="summary-box">
+                <h2>🎯 한 줄 요약</h2>
+                <ul>
+                    <li>소문자만 사용하기</li>
+                    <li>띄어쓰기는 하이픈(-)으로</li>
+                    <li>특수문자와 한글은 피하기</li>
+                    <li>의미있는 이름 짓기</li>
+                    <li>확장자 꼭 붙이기</li>
+                    <li>폴더로 비슷한 파일 묶기</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

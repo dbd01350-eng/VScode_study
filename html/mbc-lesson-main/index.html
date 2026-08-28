@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 학습 프로젝트 요약</title>
+    <style>
+        :root {
+            color-scheme: light;
+            font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: #f5f7fb;
+            color: #223;
+            line-height: 1.6;
+        }
+
+        .wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 32px 20px 60px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #2563eb, #4f46e5);
+            color: white;
+            padding: 28px;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(37, 99, 235, 0.2);
+        }
+
+        .hero h1 {
+            margin: 0 0 10px;
+            font-size: 2rem;
+        }
+
+        .hero p {
+            margin: 0;
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+            margin-top: 24px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 1.1rem;
+            color: #1d4ed8;
+        }
+
+        .card p {
+            margin: 8px 0 12px;
+            color: #4b5563;
+        }
+
+        .card ul {
+            padding-left: 18px;
+            margin: 0;
+        }
+
+        .card li {
+            margin-bottom: 6px;
+        }
+
+        .card a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+        }
+
+        .note {
+            margin-top: 24px;
+            background: #eef4ff;
+            border-left: 4px solid #2563eb;
+            padding: 16px 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="hero">
+            <h1>웹 학습 프로젝트 요약</h1>
+            <p>이 프로젝트는 HTML, CSS, JavaScript, 디자인 실습을 한 곳에서 정리한 학습 자료 모음입니다.</p>
+        </header>
+
+        <main class="grid">
+            <section class="card">
+                <h2>01 - HTML 기초</h2>
+                <p>제목, 문단, 이미지, 링크 등 기본 태그를 익히는 실습입니다.</p>
+                <ul>
+                    <li><a href="01/index.html">01 폴더 홈</a></li>
+                    <li><a href="01/ex1-4.html">제목 태그</a></li>
+                    <li><a href="01/ex1-5.html">문단 태그</a></li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>03 - CSS와 인터랙션</h2>
+                <p>스타일, 액션 시트, 스토리보드와 같은 예제를 담고 있습니다.</p>
+                <ul>
+                    <li><a href="03/index.html">03 폴더 홈</a></li>
+                    <li><a href="03/action-sheet.html">액션 시트 예제</a></li>
+                    <li><a href="03/storyboard.html">스토리보드 예제</a></li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>03-1 - JavaScript 함수</h2>
+                <p>함수, 매개변수, 기본 계산 실습을 다룹니다.</p>
+                <ul>
+                    <li><a href="03-1/index.html">03-1 폴더 홈</a></li>
+                    <li><a href="03-1/function.html">함수 실습</a></li>
+                    <li><a href="03-1/bmi.html">BMI 계산기</a></li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>docs - 강의 자료</h2>
+                <p>HTML 구조와 웹 이름 규칙 같은 문서 정리 자료입니다.</p>
+                <ul>
+                    <li><a href="docs/html_basic_structure.html">HTML 기본 구조</a></li>
+                    <li><a href="docs/css_class_id_guide.html">CSS 클래스/아이디 가이드</a></li>
+                    <li><a href="docs/web-naming-rules.html">웹 이름 규칙</a></li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>ex01 - 이미지와 QR</h2>
+                <p>이미지, QR 코드, 간단한 시각 자료 실습 페이지입니다.</p>
+                <ul>
+                    <li><a href="ex01/ar.html">AR 예제</a></li>
+                    <li><a href="ex01/qr.html">QR 예제</a></li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>html - 디자인 실습</h2>
+                <p>Figma와 웹 화면 구성 실습 페이지를 모아둔 폴더입니다.</p>
+                <ul>
+                    <li><a href="html/figma.html">Figma 실습 1</a></li>
+                    <li><a href="html/figma2.html">Figma 실습 2</a></li>
+                    <li><a href="html/figma3.html">Figma 실습 3</a></li>
+                </ul>
+            </section>
+        </main>
+
+        <section class="note">
+            <strong>추천 순서:</strong> HTML 기초 → CSS 예제 → JavaScript 함수 → 디자인 실습 순으로 공부하면 흐름이 자연스럽습니다.
+        </section>
+    </div>
+        <footer><a href="https://github.com/qwerewqwerew/mbc-lesson" target="_blank">github</a></footer>
+    
+</body>
+</html>

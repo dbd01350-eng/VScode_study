@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반응형 웹 월드컵</title>
+    <style>
+      :root {
+        --mood: calc(50% - 100px);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: green;
+        opacity: 1;
+        background-image: linear-gradient(135deg, #00d100 25%, transparent 25%), linear-gradient(225deg, #00d100 25%, transparent 25%), linear-gradient(315deg, #00d100 25%, transparent 25%), linear-gradient(45deg, #00d100 25%, transparent 25%);
+        background-size: 20px 20px;
+        background-position:
+          -10px 0,
+          -10px 0,
+          0 0,
+          0 0;
+      }
+      .ball {
+        width: 100px;
+        animation: cup 5s infinite alternate;
+        position: absolute;
+      }
+      /* .ball:hover {
+        width: 100px;
+        animation: cup 5s;
+        position: absolute;
+      } */
+      @keyframes cup {
+        0% {
+          left: 0;
+          top: 0;
+          transform: rotate(0deg);
+        }
+        50% {
+          left: var(--mood);
+          top: var(--mood);
+        }
+        100% {
+          transform: rotate(720deg);
+          left: calc(100% - 100px);
+          top: calc(100% - 100px);
+        }
+      }
+      .net {
+        width: 200px;
+        position: absolute;
+        left: calc(100% - 200px);
+        top: calc(100% - 200px);
+      }
+    </style>
+  </head>
+  <body>
+    <img src="./img/football.png" alt="축구공" class="ball" />
+    <img src="./img/net.png" alt="네트" class="net" />
+  </body>
+</html>

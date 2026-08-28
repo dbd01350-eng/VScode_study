@@ -1,0 +1,41 @@
+@charset "UTF-8";
+@import url("reset.css");
+
+body {
+  background: url(../img/bg_grid.gif);
+}
+
+body{
+    color: red;
+}
+
+.brdr{
+    border: 2px solid;
+    border-top: 1px solid #000;
+    border-bottom: 4px solid#600110;
+    border-bottom: none;
+    width: 500px;
+    margin: auto;
+}
+
+p {
+    width: 120px;
+    height: 94px;
+    background-color: aqua;
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+    margin: 10px 8px;
+    border-width: 13px;
+    border-style: dashed;
+    border-color: firebrick;
+    border: firebrick dashed 13px;
+}
+.p1{border-style: solid;}
+.p2{border-style: dotted;}
+.p3{border-style: dashed;}
+.p4{border-style: double;}
+.p5{border-style: groove;}
+.p6{border-style: ridge;}
+.p7{border-style: inset;}
+.p8{border-style: outset;}

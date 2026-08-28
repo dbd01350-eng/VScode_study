@@ -1,0 +1,153 @@
+:root {
+  --pink-box: rgb(255, 212, 218);
+  --yellow-box: rgb(253, 255, 196);
+  --accent-color: #ff6b6b;
+  --text-color: #333;
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+.container-section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.box {
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+
+.box2 {
+  padding: 25px;
+  padding-top: 10px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.box:hover,
+.box2:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.box {
+  background-color: var(--pink-box);
+  width: 340px;
+  max-width: 450px;
+  min-width: 100px;
+}
+.box2 {
+  background-color: var(--yellow-box);
+  width: 340px;
+  max-width: 450px;
+  min-width: 100px;
+}
+
+/* 미디어 컨트롤 스타일 */
+audio,
+video {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+  display: block;
+}
+
+nav a:hover {
+  color: var(--accent-color);
+}
+
+nav img {
+  margin-top: 10px;
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
+
+nav a:hover img {
+  transform: scale(1.1);
+}
+
+/* 과제 리스트 스타일 */
+
+.assignment-list {
+  padding-left: 20px;
+}
+
+.assignment-list li {
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.assignment-list a:link {
+  color: rgb(255, 119, 0);
+  text-decoration: none;
+}
+
+.assignment-list a:visited {
+  color: gainsboro;
+  text-decoration: none;
+}
+
+.assignment-list a:hover {
+  background-color: rgb(237, 207, 255);
+  text-decoration: underline;
+}
+
+.assignment-list a:focus {
+  color: red;
+  text-decoration: underline;
+}
+
+iframe {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  background: white;
+}
+
+.visitor-section {
+  width: auto;
+  max-width: 450px;
+}
+
+/* 반응형 대응 */
+@media (max-width: 768px) {
+  .box,
+  .box2,
+  .visitor-section {
+    width: 90vw;
+  }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>배경이미지의 크기</title>
+  <style>
+    .who {
+      height: 150px;
+      margin-bottom: 10px;
+      background: #67758e url('./imgs/bg_size.png') no-repeat;
+    }
+
+    .who1 {
+      background-size: 200px 200px;
+      background-position: center;
+    }
+
+    .who2 {
+      /* width:10rem height:auto */
+      background-size: 10rem;
+    }
+
+    .who3 {
+      /* width:auto height:150% */
+      background-size: auto 150%;
+    }
+
+    .who4 {
+      background-size: cover;
+      background-position: 0 center;
+    }
+
+    .who5 {
+      /* 높이 기준으로 채움 */
+      background-size: contain;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="who who1"></div>
+  <div class="who who2"></div>
+  <div class="who who3"></div>
+  <div class="who who4"></div>
+  <div class="who who5"></div>
+</body>
+
+</html>

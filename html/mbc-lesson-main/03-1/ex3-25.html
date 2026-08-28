@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 입력받은 숫자가 짝수인지 홀수인지 판별하는 프로그램 switch -->
+  <script>
+    const input = prompt("숫자를 입력하세요")
+
+    switch (Number(input) % 2) {
+      case 0: alert('짝수입니다');
+        break;
+      case 1: alert("홀수입니다");
+        break;
+      default: alert("숫자가 아닙니다")
+        break;
+    }
+  </script>
+</body>
+
+</html>

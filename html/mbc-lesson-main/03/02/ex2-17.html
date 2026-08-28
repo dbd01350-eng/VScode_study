@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudo</title>
+    <!-- 의사 클래스 (Pseudo Classes) : 상태, 위치를 선택 -->
+    <style>
+      li {
+        background: gray;
+        margin-bottom: 20px;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+      }
+      a:hover {
+        color: yellow;
+      }
+    </style>
+    <style>
+      /* nth-child */
+      li:nth-child(4) {
+        background: beige;
+      }
+      li:last-child,
+      li:last-child a {
+        color: red;
+      }
+      li {
+        list-style: none;
+      }
+    </style>
+    <!-- 의사 요소 (Pseudo Emelents) :
+      없는거 추가,  선택
+    -->
+    <style>
+      li::first-letter {
+        font-size: 32px;
+      }
+      /* seo와 무관한 이미지 */
+      li:hover a:before {
+        content: "👩";
+      }
+      li:hover:after {
+        content: "🙌";
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li><a href="#">COMPANY</a></li>
+      <li><a href="#">PRODUCT</a></li>
+      <li><a href="#">SERVICE</a></li>
+      <li><a href="#">COMMUNITY</a></li>
+    </ul>
+  </body>
+</html>

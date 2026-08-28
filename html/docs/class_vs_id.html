@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클래스(Class)와 아이디(ID) 이야기</title>
+    <style>
+        body {
+            font-family: 'Nanum Gothic', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fffbe6;
+        }
+        header {
+            background-color: #ffcc00;
+            padding: 30px;
+            text-align: center;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h1 { margin: 0; color: #d35400; font-size: 2em; }
+        h2 { color: #2980b9; border-left: 10px solid #3498db; padding-left: 15px; margin-top: 40px; }
+        .box {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border: 2px dashed #bdc3c7;
+        }
+        .highlight-id { color: #e74c3c; font-weight: bold; }
+        .highlight-class { color: #27ae60; font-weight: bold; }
+        code {
+            background-color: #f0f0f0;
+            padding: 3px 6px;
+            border-radius: 5px;
+            font-family: 'Consolas', monospace;
+            color: #c0392b;
+        }
+        .example-card {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .card {
+            width: 45%;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+        }
+        #my-special-name { background-color: #e74c3c; } /* ID 예시 */
+        .our-uniform { background-color: #2ecc71; }    /* Class 예시 */
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🎨 CSS 이름표 이야기</h1>
+    <p>클래스(Class)와 아이디(ID)는 어떻게 다를까요?</p>
+</header>
+
+<section class="box">
+    <h2>1. 아이디(ID)는 "나만의 이름" 이에요! 🆔</h2>
+    <p>학교에 <b>'김철수'</b>라는 이름을 가진 친구가 한 명뿐인 것처럼, <span class="highlight-id">아이디(ID)는 한 페이지에 딱 하나만</span> 쓸 수 있어요.</p>
+    <ul>
+        <li><b>특징:</b> 세상에서 하나뿐인 특별한 부분에 붙여요.</li>
+        <li><b>기호:</b> CSS에서는 이름 앞에 <code>#</code> (샵)을 붙여서 불러요.</li>
+        <li><b>예시:</b> <code>#my-special-name { ... }</code></li>
+    </ul>
+</section>
+
+<section class="box">
+    <h2>2. 클래스(Class)는 "우리 반 유니폼" 이에요! 👕</h2>
+    <p>우리 반 친구들 모두가 똑같은 <b>'체육복'</b>을 입을 수 있는 것처럼, <span class="highlight-class">클래스(Class)는 여러 명에게 똑같이</span> 입혀줄 수 있어요.</p>
+    <ul>
+        <li><b>특징:</b> 여러 군데에 똑같은 스타일을 줄 때 사용해요.</li>
+        <li><b>기호:</b> CSS에서는 이름 앞에 <code>.</code> (점)을 붙여서 불러요.</li>
+        <li><b>예시:</b> <code>.our-uniform { ... }</code></li>
+    </ul>
+</section>
+
+<section class="box">
+    <h2>3. 한눈에 비교해볼까요?</h2>
+    <div class="example-card">
+        <div id="my-special-name" class="card">
+            <h3>아이디 (ID)</h3>
+            <p># 기호를 써요!<br>딱 한 명만!<br>(나만의 이름표)</p>
+        </div>
+        <div class="our-uniform card">
+            <h3>클래스 (Class)</h3>
+            <p>. 기호를 써요!<br>여러 명 다 같이!<br>(단체 유니폼)</p>
+        </div>
+    </div>
+</section>
+
+<section style="background-color: #ecf0f1; padding: 20px; border-radius: 15px;">
+    <h3>💡 잊지 마세요!</h3>
+    <p>만약 아까 <code>ex2-6.html</code> 파일처럼 <b>똑같은 ID를 두 번 쓰면</b>, 컴퓨터가 "누가 진짜 주인이야?" 하고 헷갈려 한답니다. 그럴 때는 <b>클래스(Class)</b>로 바꿔주는 게 정답이에요!</p>
+</section>
+
+<footer>
+    <p>쉽게 배우는 웹 코딩 &copy; 2026</p>
+</footer>
+
+</body>
+</html>

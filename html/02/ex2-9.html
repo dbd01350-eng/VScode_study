@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>하위선택자</title>
+    <style>
+      body .blue_text {
+        background-color: blanchedalmond;
+      }
+      .blue_text p {
+        color: blue;
+      }
+      /* 띄어쓰기 하위선택자 중요!! */
+      .point li {
+        color: red;
+      }
+      .back li {
+        background-color: rgb(214, 214, 255);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="blue_text back point">
+      <p>7월의 여행지</p>
+      <p>8월의 여행지</p>
+      <ul>
+        <li>1주차 여행지</li>
+        <li>2주차 여행지</li>
+      </ul>
+      <p>내년의 여행지</p>
+    </div>
+  </body>
+</html>

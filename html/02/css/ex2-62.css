@@ -1,0 +1,27 @@
+@charset "UTF-8";
+@import url(reset.css);
+
+body{
+    height: 200vh;
+}
+
+.container{
+    width: 500px;
+    height: 800px;
+    background: #eee;
+    padding: 50px;
+}
+.box{
+    width: 200px;
+    height: 200px;
+    background-color: orange;
+    /* margin: 20px; */
+    /* 마진 겹침현상은 인접해 있는 부모요소한테도 영향을 끼침 -> 또한 부모 자식 상관 없이 크기가 더 큰 마진을 따라감 */
+    margin-bottom: 120px;
+    
+}
+.sticky{
+    position: sticky;
+    top: 300px;
+    background-color: aquamarine;
+}

@@ -1,0 +1,25 @@
+@charset "UTF-8";
+@import url(reset.css);
+
+h1{
+    font-weight: 600;
+    font-size: 2em;
+}
+p{
+    font-size: 0.8em;
+    width: 350px;
+}
+
+p::before{
+    content:"✨";
+    background-color: yellow;
+    font-size: 2em;
+    display: block;
+    width: fit-content;
+}
+p::after{
+    content: "요고추가";
+    font-size: 2em;
+    color: red;
+    text-shadow: 2px 0px 3px rgba(255, 0, 0, 0.7);
+}

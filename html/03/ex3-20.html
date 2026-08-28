@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>if문</title>
+  </head>
+  <body>
+    <form action="#" method="post">
+      <label for="age">나이:</label><input type="text" type="text" id="age" name="age" />
+      <button type="submit">전송</button>
+    </form>
+    <hr />
+    <div class="result"></div>
+    <script>
+      let form = document.querySelector("form");
+      age = document.querySelector("#age");
+      result = document.querySelector('.result');
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        let n = Number(age.value);
+        
+/*         if (n >= 20 && n < 30) {
+            result.innerText += "통과"
+        }
+        else {
+          result.innerText += "비통과"
+        } 
+*/
+
+        if (n <= 30) {
+          result.innerHTML += "1차통과 0~30 <br>"
+        }
+        else if (n < 40) {
+          result.innerHTML += "2차통과 30~39 <br>"
+        }
+        else {
+          result.innerHTML += "비통과 <br>"
+        }
+
+
+
+
+      });
+    </script>
+  </body>
+</html>

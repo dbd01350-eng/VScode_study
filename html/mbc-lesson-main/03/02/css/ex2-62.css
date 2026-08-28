@@ -1,0 +1,22 @@
+@charset "UTF-8";
+@import url(reset.css);
+body{
+  height: 200vh;
+}
+.container {
+  width: 500px;
+  height: 800px;
+  background: #eee;
+  padding:50px;
+}
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: orange;
+  margin-bottom:120px;
+}
+.sticky {
+  position: sticky;
+  top:300px;
+  background-color: aquamarine;
+}

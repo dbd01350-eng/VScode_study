@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>id 선택자</title>
+    <style>
+      p {
+        color: #ff0000;
+      }
+      #tea {
+        color: magenta;
+      }
+      #food {
+        color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <p>우리를 <span id="food">기쁘게</span> 하는 것들</p>
+    <p id="tea">건강에 좋은 차</p>
+    <p id="tea">머리가 좋아지는 음식</p>
+    <!-- id는 무조건 한개 문서에서 딱! 한번만 사용가능하다,
+        이렇게 두 번 쓰면 잠재적인 버그가 터진다.
+        보통 기능넣을 때 사용. 저런 식으로 사용하고 싶으면 class로 바꾸기-->
+  </body>
+</html>

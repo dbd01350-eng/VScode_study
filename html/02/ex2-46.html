@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>배경이미지의 영역</title>
+    <style>
+      div {
+        width: 550px;
+        border: brown 15px double;
+        margin-bottom: 20px;
+        padding: 25px;
+        background-color: aquamarine;
+        background-image: url('./img/ani_spade.png');
+      }
+      .clip1 {
+        background-clip: border-box;
+      }
+      .clip2 {
+        background-clip: padding-box;
+      }
+      .clip3 {
+        background-clip: content-box;
+        color: transparent;
+        background-clip: text;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="clip1">It's impossible not only starting good but also keeping it firm!!</div>
+    <div class="clip2">It's impossible not only starting good but also keeping it firm!!</div>
+    <div class="clip3">It's impossible not only starting good but also keeping it firm!!</div>
+  </body>
+</html>

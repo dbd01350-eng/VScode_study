@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>배경이미지의 원점</title>
+  <style>
+    div {
+      width: 550px;
+      padding: 25px;
+      border: 15px double rgba(0, 0, 0, .6);
+      margin: 20px auto;
+      background:url(imgs/bg_origin.png) no-repeat;
+      background-size:70px;
+    }
+    .ori1{background-origin:border-box;}
+    .ori2{background-origin:padding-box;}
+    .ori3{background-origin:content-box;}
+  </style>
+</head>
+
+<body>
+  <div class="ori1">It's impossible not only starting good but also keeping it firm!!</div>
+  <div class="ori2">It's impossible not only starting good but also keeping it firm!!</div>
+  <div class="ori3">It's impossible not only starting good but also keeping it firm!!</div>
+</body>
+
+</html>

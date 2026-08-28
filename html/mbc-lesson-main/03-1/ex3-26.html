@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let sum = 0;
+    sum += 1;
+    sum = sum + 2;
+    sum = sum + 3;
+    sum = sum + 4;
+    sum = sum + 5;
+    document.write(`1부터 5까지 더하면 ${sum}`)
+  </script>
+  <hr>
+  <script>
+    // 반복문으로 개선
+    let output = 0;
+    //for(초기값;조건식;증감식){}
+    for (let i = 1; i < 6; i++) {
+      document.write(`i의 값: ${i}<br>`)
+      output += i
+    }
+    document.write(`<hr>반복문: 1부터 5까지 더하면 ${output}`)
+  </script>
+  <script>
+    for (let i = 1; i < 6; i++) {
+      console.log(i)
+    }
+  </script>
+  <hr>
+  <hr>
+  <script>
+    /* for (시작값; 조건식(false); 증감식) { 실행문 } */
+    for (let a = 1; a < 6; a++) {
+      document.write(`${a}`)
+     }
+     document.write('<br>반복문 탈출')
+  </script>
+</body>
+
+</html>

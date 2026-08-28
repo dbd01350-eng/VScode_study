@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>그리드 레이아웃 실습</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" />
+    <style>
+      .box {
+        width: 50%;
+        height: 100px;
+      }
+      .box1 {
+        background: #f99;
+        grid-area: box1;
+      }
+      .box2 {
+        background: #9f9;
+        grid-area: box2;
+      }
+      .box3 {
+        background: #99f;
+        grid-area: box3;
+      }
+      .box4 {
+        background: #ff9;
+        grid-area: box4;
+      }
+      .cont {
+        display: grid;
+        grid-template-areas:
+          "box1 box2"
+          "box3 box4";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cont">
+      <div class="box box1">box1</div>
+      <div class="box box2">box2</div>
+      <div class="box box3">box3</div>
+      <div class="box box4">box4</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>속성선택자</title>
+    <style>
+      /* 속성=값일치 */
+      /* 속성*=값일부일치 */
+      a[target="_blank"] {
+        color: red;
+        text-decoration: none;
+      }
+      a[title*="조리"] {
+        background: yellow;
+        font-weight: bold;
+      }
+      a[title^="제"] {
+        background-color: brown;
+        color: white;
+        font-weight: bold;
+      }
+      a[title$="능장"] {
+        text-decoration: none;
+        font-weight: normal;
+        background: pink;
+        color: navy;
+      }
+      [title="조주기능사"] {
+        color: ivory;
+        background: navy;
+      }
+      a[title^="조리"] {
+        color: green;
+        background: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>속성 선택자 사용하기</h1>
+    <hr />
+    <h2>조리학부 자격증</h2>
+    <ul>
+      <li><a href="http://www.q-net.or.kr" title="복어조리기능사">복어조리기능사</a></li>
+      <li><a href="http://www.q-net.or.kr" title="조리기능사">조리기능사</a></li>
+      <li><a href="http://www.q-net.or.kr" target="_blank" title="양식조리기능사">양식조리기능사</a></li>
+      <li><a href="http://www.q-net.or.kr" target="_blank" title="일식조리기능사">일식조리기능사</a></li>
+      <li><a href="http://www.q-net.or.kr" title="중식조리기능사">중식조리기능사</a></li>
+      <li><a href="http://www.q-net.or.kr" title="한식조리기능사">한식조리기능사</a></li>
+      <li><a href="http://www.q-net.or.kr" target="_blank" title="제과기능사">제과기능사</a></li>
+      <li><a href="http://www.q-net.or.kr" target="_blank" title="제빵기능사">제빵기능사</a></li>
+      <li><a href="http://www.q-net.or.kr" title="제과기능장">제과기능장</a></li>
+      <li><a href="http://www.q-net.or.kr" title="조리기능장">조리기능장</a></li>
+      <li><a href="http://www.q-net.or.kr" title="조리산업기사(복어조리)">조리산업기사(복어조리)</a></li>
+      <li><a href="http://www.q-net.or.kr" target="_blank" title="조리산업기사(양식)">조리산업기사(양식)</a></li>
+      <li><a href="http://www.q-net.or.kr" target="_blank" title="조리산업기사(일식)">조리산업기사(일식)</a></li>
+      <li><a href="http://www.q-net.or.kr" target="_blank" title="조리산업기사(중식)">조리산업기사(중식)</a></li>
+      <li><a href="http://www.q-net.or.kr" target="_blank" title="조리산업기사(한식)">조리산업기사(한식)</a></li>
+      <li><a href="http://www.q-net.or.kr" title="조주기능사">조주기능사</a></li>
+    </ul>
+  </body>
+</html>

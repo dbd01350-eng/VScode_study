@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자손선택자</title>
+    <style>
+        .blue_text p{
+            font-size: 32px;
+        }
+        /* 모든 일가친척 자손 */
+        .blue_text>p{
+            font-size: 20px;
+        }
+        /* 친자식 */
+    </style>
+  </head>
+  <body>
+    <div class="blue_text">
+      <p>7월의 여행지</p>
+      <p>8월의 여행지</p>
+      <ul>
+        <li><p>1주차 여행지</p></li>
+        <li><p>2주차 여행지</p></li>
+      </ul>
+      <p>내년의 여행지</p>
+    </div>
+  </body>
+</html>

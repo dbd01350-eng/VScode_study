@@ -1,0 +1,37 @@
+@charset "UTF-8";
+/* 초기화코드 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url(../imgs/bg.jpg);
+}
+
+p {
+  font-size: 2rem;
+  padding: 0.5rem;
+}
+.color1 {
+  background: magenta;
+}
+.color2 {
+  background: #9999ff;
+}
+.color3 {
+  /* 인자,인자,인자 */
+  background: rgb(163, 229, 77);
+}
+.color4 {
+  opacity: 0.5;
+  background: hsl(180, 50%, 50%);
+}
+.color5 {
+  color: transparent;
+  background: rgba(180, 255, 255, 0.5);
+}
+.color6 {
+  color: #ff000022;
+  background: hsla(180, 50%, 50%, 0.8);
+}

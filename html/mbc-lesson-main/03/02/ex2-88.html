@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>min-width와 max-width</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        font-size: 2rem;
+      }
+      @media screen and (max-width: 767px) {
+        /* 0~767 */
+        body {
+          background: #fff4d6;
+        }
+      } /* //(max-width: 767px) */
+      @media screen and (min-width: 768px) and (max-width: 1023px) {
+        /* 768~1023 */
+        body {
+          background: #d6faff;
+        }
+      } /* //(min-width: 768px) and (max-width: 1023px) */
+      @media screen and (min-width: 1024px) {
+        /* 1024~ */
+        body {
+          background: #e7d6ff;
+        }
+      }
+      @media print {
+        body:after {
+          content: "여기는 출력용";
+          font-size: 72px;
+        }
+      }
+      /* 작은화면->큰화면 : 모바일우선반응형 (모바일 퍼스트 반응형)*/
+    </style>
+  </head>
+  <body>
+    <p>브라우저 너비를 바꿔 배경색을 확인하세요.</p>
+  </body>
+</html>

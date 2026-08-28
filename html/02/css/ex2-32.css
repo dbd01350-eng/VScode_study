@@ -1,0 +1,32 @@
+@charset "UTF-8";
+@import url("font.css");
+
+p{
+    width: 400px;
+    border: 1px solid red;
+}
+.white1{
+    white-space: normal;
+/* 자동줄바꿈 */
+}
+.white2{
+    white-space: nowrap;
+/* 자동 줄바꿈 없음 */
+}
+.white3{
+    white-space: pre;
+/* 보이는대로 표시 됨, 줄바꿈 없음 */
+}
+.white4{
+    white-space: pre-wrap;
+/* 보이는대로 표시 되지만 줄바꿈 자동 */
+}
+.white5{
+    white-space: pre-line;
+/* 줄바꿈만 됨 */
+}
+.white6{
+    white-space: break-spaces;
+/* 보이는대로 표시 됨, 줄바꿈 자동 중요포인트 공백도 문자로 취급함 */
+}
+

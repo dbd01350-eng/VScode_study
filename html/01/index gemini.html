@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>심다은의 홈페이지 (Gemini Edition)</title>
+    <!-- 나눔고딕 폰트 적용 -->
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --pink-box: rgb(255, 212, 218);
+        --yellow-box: rgb(253, 255, 196);
+        --accent-color: #ff6b6b;
+        --text-color: #333;
+        --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      body {
+        font-family: "Nanum Gothic", sans-serif;
+        background-color: #fbf1ff;
+        color: var(--text-color);
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      header {
+        text-align: center;
+        padding: 40px 20px;
+        background: #7e5ac060;
+        width: 100%;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        margin-bottom: 30px;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2.5em;
+        color: #ffffff;
+      }
+
+      header h2 {
+        margin: 10px 0;
+      }
+      header h3 {
+        font-weight: 400;
+        color: #ffffff;
+      }
+
+      main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+        max-width: 1200px;
+        padding: 20px;
+      }
+
+      .container-section {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
+
+      .box,
+      .box2 {
+        padding: 25px;
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+      }
+
+      .box:hover,
+      .box2:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+      }
+
+      .box {
+        background-color: var(--pink-box);
+        width: 340px;
+      }
+      .box2 {
+        background-color: var(--yellow-box);
+        width: 340px;
+      }
+
+      /* 미디어 컨트롤 스타일 */
+      audio,
+      video {
+        width: 100%;
+        border-radius: 12px;
+        margin-bottom: 15px;
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      nav li {
+        margin-bottom: 20px;
+        background: rgba(255, 255, 255, 0.4);
+        padding: 15px;
+        border-radius: 15px;
+        text-align: center;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: var(--text-color);
+        font-weight: 700;
+        display: block;
+      }
+
+      nav a:hover {
+        color: var(--accent-color);
+      }
+
+      nav img {
+        margin-top: 10px;
+        border-radius: 10px;
+        transition: transform 0.2s;
+      }
+
+      nav a:hover img {
+        transform: scale(1.1);
+      }
+
+      /* 과제 리스트 스타일 */
+      .assignment-list {
+        padding-left: 20px;
+      }
+
+      .assignment-list li {
+        margin-bottom: 12px;
+        font-weight: bold;
+      }
+
+      .assignment-list a {
+        color: rgb(255, 119, 0);
+        text-decoration: none;
+      }
+
+      .assignment-list a:hover {
+        text-decoration: underline;
+      }
+
+      iframe {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+        background: white;
+      }
+
+      .visitor-section {
+        width: 100%;
+        max-width: 450px;
+      }
+
+      .qr-section {
+        margin: 40px 0;
+        padding: 15px 30px;
+        background: white;
+        border-radius: 50px;
+        box-shadow: var(--shadow);
+      }
+
+      .qr-section a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: #555;
+        font-weight: bold;
+      }
+
+      footer {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+        background: #f1f1f1;
+        font-size: 0.9em;
+        color: #888;
+      }
+
+      footer a {
+        color: #3498db;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      /* 반응형 대응 */
+      @media (max-width: 768px) {
+        .box,
+        .box2,
+        .visitor-section {
+          width: 90vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>심다은의 홈페이지</h1>
+      <h2>😎👍✨</h2>
+      <h3>헬로우 봉쥬르 챠오 신짜오 니하오 곤니찌와 안녕하세용.</h3>
+    </header>
+
+    <main>
+      <div class="container-section">
+        <!-- 멀티미디어 & 메뉴 -->
+        <section class="box">
+          <audio src="./01/media/music.wav" controls autoplay muted loop></audio>
+          <nav>
+            <ul>
+              <li>
+                <a href="./01/ex_1/tag.html" target="_blank" rel="noopener noreferrer">
+                  🏷️ 태그가 무엇인지 궁금하다면?<br />
+                  <img src="./01/img/kuromi.gif" width="100" alt="쿠로미" />
+                </a>
+              </li>
+              <li>
+                <a href="./01/ex_1/AIimg.html" target="_blank" rel="noopener noreferrer">
+                  📸 내 모습을 보고 싶다면?<br />
+                  <img src="./01/img/kuromi.gif" width="100" alt="귀여운 쿠로미" />
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </section>
+
+        <!-- 비디오 섹션 -->
+        <section class="box">
+          <video src="./01/media/video.mp4" controls autoplay muted loop></video>
+          <p style="text-align: center; font-weight: bold; color: #555">🎥 특별 영상</p>
+        </section>
+      </div>
+
+      <div class="container-section">
+        <!-- 과제 섹션 -->
+        <section class="box2">
+          <h3>📚 나의 과제함</h3>
+          <ol class="assignment-list">
+            <li><a href="./01/ex_2/ex1-18.html" target="_blank" rel="noopener noreferrer">&lt;260515 과제&gt;</a></li>
+            <li><a href="./01/ex_2/ex1-44.html" target="_blank" rel="noopener noreferrer">&lt;260519 퀴즈&gt;</a></li>
+            <li><a href="./01/ex_2/ex1-26.html" target="_blank" rel="noopener noreferrer">&lt;260520 퀴즈&gt;</a></li>
+          </ol>
+          <iframe src="./01/ex_2/every_example.html" width="100%" height="250" style="margin-top: 15px"></iframe>
+        </section>
+
+        <!-- 방문자 요청사항 -->
+        <aside class="box2 visitor-section">
+          <h3 style="color: rgb(255, 51, 0)">💌 방문자 요청사항</h3>
+          <iframe src="./01/request/request.html" width="100%" height="450"></iframe>
+        </aside>
+      </div>
+    </main>
+
+    <aside class="qr-section">
+      <a href="./01/ex_1/qr.html" target="_blank" rel="noopener noreferrer">
+        <img src="./01/ex_1/qrcode.png" alt="QR코드" width="24" />
+        홈페이지 QR코드 확인하기
+      </a>
+    </aside>
+
+    <footer>
+      <p>MBC 아카데미 종로 캠퍼스 | <a href="https://naver.me/5EU7okLP" target="_blank" rel="noopener noreferrer">오시는 길 (Naver Map)</a></p>
+      <p style="margin-top: 10px">&copy; 2026 Sim Da-eun. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스토리보드 상세 - 당근광고 프로젝트</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="storyboard-header">
+            <div>
+                <a href="index.html" class="btn btn-outline btn-sm">&larr; 대시보드로 돌아가기</a>
+                <h1 style="text-align: left; margin-top: 10px;">🥕 당근광고 스토리보드</h1>
+            </div>
+            <div class="project-actions">
+                <button class="btn btn-secondary" onclick="alert('저장되었습니다!')">임시 저장</button>
+                <button class="btn btn-primary" onclick="alert('전체 영상 생성을 시작합니다.')">전체 생성</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="storyboard-info" style="margin-bottom: 20px; color: var(--text-muted); font-size: 0.9rem;">
+                <span>프로젝트 번호: No. 001</span> | <span>작성자: 관리자</span>
+            </div>
+
+            <table class="storyboard-table">
+                <thead>
+                    <tr>
+                        <th class="cut-cell">CUT</th>
+                        <th class="picture-cell">PICTURE (REF)</th>
+                        <th class="action-cell">ACTION</th>
+                        <th class="dialogue-cell">DIALOGUE</th>
+                        <th class="time-cell">TIME</th>
+                        <th class="prompt-cell">PROMPT & CONTROLLER</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Cut 001 -->
+                    <tr>
+                        <td class="cut-cell">001</td>
+                        <td class="picture-cell">
+                            <img src="https://www.figma.com/api/mcp/asset/b034644a-ba4d-4332-bdfa-386b43b91027" alt="Reference 001" class="ref-img">
+                        </td>
+                        <td class="action-cell">
+                            1:11프레임까지 카메라가 스테이지 안으로 움직인다.
+                        </td>
+                        <td class="dialogue-cell">
+                            소리없음
+                        </td>
+                        <td class="time-cell">
+                            00:00:00-<br>00:01:11
+                        </td>
+                        <td class="prompt-cell">
+                            <textarea class="prompt-text" style="width: 100%; height: 80px;">Locked-down stationary camera shot, no camera movement. A man in a white T-shirt in a profile view, looking to the side. He speaks softly and gently, with precise lip sync as he articulates "sal eun dang gun". Immediately after speaking, he freezes and remains completely still. The camera is completely still (tripod fix) to emphasize subtle facial muscle movements and organic expressions. Soft, professional natural lighting, calm and intimate atmosphere. Background is a tastefully blurred, cozy kitchen with shallow depth of field. High-end cinematic realism, 4k, sharp focus on the face.</textarea>
+                            <div class="controller">
+                                <button class="btn btn-primary btn-sm" onclick="generateVideo(1)">영상 생성</button>
+                                <button class="btn btn-outline btn-sm" onclick="previewVideo(1)">미리보기</button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Cut 002 -->
+                    <tr>
+                        <td class="cut-cell">002</td>
+                        <td class="picture-cell">
+                            <img src="https://www.figma.com/api/mcp/asset/1f33a122-19e0-4af7-a371-e515d256af32" alt="Reference 002" class="ref-img">
+                        </td>
+                        <td class="action-cell">
+                            남자가 “삶은 당근” 이라고 말하면 문자가 하나씩 나타난다.
+                        </td>
+                        <td class="dialogue-cell">
+                            남자: (속삭인다)<br>”삶은당근”
+                        </td>
+                        <td class="time-cell">
+                            00:00:04-<br>00:01:20
+                        </td>
+                        <td class="prompt-cell">
+                            <textarea class="prompt-text" style="width: 100%; height: 80px;">A young Korean man, likely in his early twenties, is the central subject, reclining on a patterned, brown cushion. He gazes upwards towards the viewer, with a gentle, inviting expression. Natural lighting casts soft shadows across his face. Vivid arrangement of orange and white flowers is visible.</textarea>
+                            <div class="controller">
+                                <button class="btn btn-primary btn-sm" onclick="generateVideo(2)">영상 생성</button>
+                                <button class="btn btn-outline btn-sm" onclick="previewVideo(2)">미리보기</button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Placeholder Cut 003 -->
+                    <tr style="opacity: 0.5;">
+                        <td class="cut-cell">003</td>
+                        <td class="picture-cell">
+                            <div style="background: #eee; width: 100%; height: 120px; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #999;">이미지 없음</div>
+                        </td>
+                        <td class="action-cell">남자가 클로즈업 된다.</td>
+                        <td class="dialogue-cell">구운 당근</td>
+                        <td class="time-cell">00:00:10-</td>
+                        <td class="prompt-cell">
+                            <textarea class="prompt-text" style="width: 100%; height: 80px;">[프롬프트를 입력하세요]</textarea>
+                            <div class="controller">
+                                <button class="btn btn-primary btn-sm" disabled>영상 생성</button>
+                                <button class="btn btn-outline btn-sm" disabled>미리보기</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 당근 영상 생성 스토리보드. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

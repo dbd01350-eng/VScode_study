@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>for 반복1</title>
+  </head>
+  <body>
+    <script>
+      let sum = 0;
+      sum = sum + 1;
+      sum = sum + 2;
+      sum = sum + 3;
+      sum = sum + 4;
+      sum = sum + 5;
+      document.write(`1부터 5까지 더하면 ${sum}<br>`);
+    </script>
+    <script>
+      //반복문으로 개선
+      let output = 0;
+      for (let i = 1; i < 6; i++) {
+        document.write(`i의 값 ${i}<br>`);
+        output += i
+      }
+      
+      document.write(`<hr>반복문: 1부터 5까지 더하면 ${output}`);
+    </script>
+
+    <hr><hr>
+
+    <script>
+        for (let a = 5; a < 10; a++) {
+            document.write(`${a}<br>`);
+            
+        }
+        document.write(`<br>반복문 탈출`);
+        
+    </script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+/* 전체선택자 tip : 여백초기화, 웹브라우저의 기본스타일 초기화 */
+/* body {
+        margin: 20px;
+      } */
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  padding: 20px;
+}
+/* 그룹선택자 */
+/* h2,
+      span {
+        color: red;
+      } */
+h2,
+span {
+  color: red;
+}
+/* 태그선택자 */
+/* div {
+        padding-left: 10px;
+      }
+      h1 {
+        background-color: beige;
+      } */
+h1 {
+  background-color: beige;
+}
+/* 아이디선택자 */
+/* #container {
+        background-color: gainsboro;
+        width: 1000px;
+        padding-right: 20px;
+      } */
+#container {
+  background-color: gainsboro;
+  padding: 10px;
+}
+
+/* 클래스선택자 */
+/* .tea1 {
+        background-color: beige;
+      }
+      .tea2 {
+        background-color: gainsboro;
+      }
+      .tea3 {
+        background-color: white;
+      } */
+.tea1 {
+  background-color: beige;
+}
+
+/* 하위선택자 */
+/* div .tea3 {
+        color: brown;
+      } */
+li p {
+  color: green;
+}
+/* 자식선택자 */
+/* p > span {
+        color: blue;
+      } */
+p > span {
+  color: blue;
+}
+
+/* 형제선택자 */
+/* div p {
+        color: green;
+      } */
+p ~ ul {
+  padding: 30px;
+}
+
+/* 인접선택자 */
+/* h2 + p {
+        color: black;
+      } */
+.tea2 + li {
+  color: brown;
+  background-color: white;
+}

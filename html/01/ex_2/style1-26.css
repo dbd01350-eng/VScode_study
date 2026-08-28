@@ -1,0 +1,23 @@
+      tr,
+      td,
+      th,
+      table {
+        border: 1px solid #000;
+      }
+      thead {
+        text-align: center;
+        background-color: #cfcfcf;
+      }
+      tbody {
+        text-align: left;
+      }
+      tfoot {
+        text-align: left;
+        background-color: #cfcfcf;
+      }
+      table {
+        width: auto;
+        height: auto;
+      }
+
+      body {background-color: rgb(255, 244, 221);}

@@ -1,0 +1,21 @@
+@charset "UTF-8";
+@import url(./fonts.css);
+
+p {
+  margin: 10px 110px;
+  border: 1px solid crimson;
+  padding: 10px;
+}
+
+.txt1 {
+  text-align: left;
+}
+.txt2 {
+  text-align: right;
+}
+.txt3 {
+  text-align: center;
+}
+.txt4 {
+  text-align: justify;
+}

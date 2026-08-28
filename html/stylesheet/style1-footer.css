@@ -1,0 +1,31 @@
+.qr-section {
+  margin: 40px 0;
+  padding: 15px 30px;
+  background: white;
+  border-radius: 50px;
+  box-shadow: var(--shadow);
+}
+
+.qr-section a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #555;
+  font-weight: bold;
+}
+
+footer {
+  width: 100%;
+  padding: 30px;
+  text-align: center;
+  background: #f1f1f1;
+  font-size: 0.9em;
+  color: #888;
+}
+
+footer a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}

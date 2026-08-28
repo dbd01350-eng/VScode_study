@@ -1,0 +1,23 @@
+div {
+  border: 10px solid black;
+  outline-width: 10px;
+  outline-color: tomato;
+  outline-style: solid;
+  outline-offset: -25px;
+  padding: 40px;
+}
+p {
+  line-height: 200%;
+  padding: 10px;
+  width: 330px;
+  height: 120px;
+  margin: 40px auto;
+}
+.border1 {
+  border: 20px solid #ffcc00;
+  outline: dashed 1px #000;
+}
+.border2 {
+  border: 10px double #ffcc00;
+  outline: double 10px rgba(10, 33, 240, 1);
+}

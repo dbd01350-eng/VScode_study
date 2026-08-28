@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OR 문</title>
+  </head>
+  <body>
+    <script>
+      let num1 = prompt("50미만의 수 입력");
+      let num2 = prompt("50미만의 수 입력");
+      console.log(num1);
+      console.log(num2);
+      if (num1 == null || num2 == null) {
+        alert("입력을 취소하셨습니다.");
+      } else if (num1 == "" || num2 == "") {
+        alert("입력해주세요.");
+      } else if (num1 < 50 || num2 < 50) {
+        alert("두개의 숫자 중 최소 한개는 50보다 작네요");
+      } else {
+        alert("두개의 숫자 모두 50보다 큽니다.");
+      }
+    </script>
+  </body>
+</html>

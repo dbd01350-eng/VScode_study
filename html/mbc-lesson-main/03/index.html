@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 영상 생성 서비스 모음</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --card: #1a1d27;
+    --card-hover: #222634;
+    --accent: #6c8cff;
+    --accent-soft: #2a3354;
+    --text: #e7e9f0;
+    --muted: #9aa0b4;
+    --border: #2a2e3c;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', 'Malgun Gothic', system-ui, sans-serif;
+    background: radial-gradient(circle at top, #161a26 0%, var(--bg) 60%);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 40px 20px;
+    line-height: 1.5;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; }
+  header { text-align: center; margin-bottom: 40px; }
+  header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  header h1 .emoji { margin-right: 8px; }
+  header p { color: var(--muted); margin-top: 10px; font-size: 0.95rem; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 18px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px;
+    transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    background: var(--card-hover);
+    border-color: var(--accent);
+  }
+  .card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    gap: 8px;
+  }
+  .card-head h2 { font-size: 1.2rem; font-weight: 600; }
+  .badge {
+    font-size: 0.72rem;
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 3px 9px;
+    border-radius: 20px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .info { list-style: none; margin: 6px 0 18px; }
+  .info li {
+    color: var(--muted);
+    font-size: 0.9rem;
+    padding: 3px 0 3px 16px;
+    position: relative;
+  }
+  .info li::before {
+    content: "•";
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+  }
+  .card a.visit {
+    margin-top: auto;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    background: var(--accent);
+    color: #0f1117;
+    font-weight: 600;
+    padding: 9px 0;
+    border-radius: 9px;
+    font-size: 0.9rem;
+    transition: opacity 0.15s ease;
+  }
+  .card a.visit:hover { opacity: 0.85; }
+  footer { text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 40px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1><span class="emoji">🎬</span>AI 영상 생성 서비스 모음</h1>
+    <p>주요 AI 비디오 생성 도구 링크와 크레딧 정보</p>
+  </header>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-head">
+        <h2>구글 Flow</h2>
+        <span class="badge">크레딧</span>
+      </div>
+      <ul class="info">
+        <li>최초 100 크레딧 제공</li>
+        <li>매달 50 크레딧</li>
+        <li>8초당 10 크레딧 소진</li>
+      </ul>
+      <a class="visit" href="https://labs.google/flow" target="_blank" rel="noopener">바로가기</a>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h2>클링 (Kling)</h2>
+        <span class="badge">크레딧</span>
+      </div>
+      <ul class="info">
+        <li>매달 66 크레딧</li>
+        <li>영상 1~3개 생성</li>
+      </ul>
+      <a class="visit" href="https://kling.ai/" target="_blank" rel="noopener">바로가기</a>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h2>하이루오 (Hailuo)</h2>
+      </div>
+      <ul class="info">
+        <li>AI 영상 생성 플랫폼</li>
+      </ul>
+      <a class="visit" href="https://hailuoai.video/ko" target="_blank" rel="noopener">바로가기</a>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h2>픽스버스 (PixVerse)</h2>
+      </div>
+      <ul class="info">
+        <li>AI 영상 생성 플랫폼</li>
+      </ul>
+      <a class="visit" href="https://app.pixverse.ai/" target="_blank" rel="noopener">바로가기</a>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h2>런웨이 (Runway)</h2>
+      </div>
+      <ul class="info">
+        <li>AI 영상 생성 플랫폼</li>
+      </ul>
+      <a class="visit" href="https://runwayml.com/" target="_blank" rel="noopener">바로가기</a>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h2>아레나 (Arena)</h2>
+      </div>
+      <ul class="info">
+        <li>AI 영상 생성 플랫폼</li>
+      </ul>
+      <a class="visit" href="https://arena.ai/" target="_blank" rel="noopener">바로가기</a>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h2>드리미나 (Dreamina)</h2>
+        <span class="badge">CapCut</span>
+      </div>
+      <ul class="info">
+        <li>Seedance 4.0 Pro 모델</li>
+      </ul>
+      <a class="visit" href="https://dreamina.capcut.com/ai-tool/home?type=video&model=dreamina_seedance_40_pro" target="_blank" rel="noopener">바로가기</a>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h2>비두 (Vidu)</h2>
+      </div>
+      <ul class="info">
+        <li>AI 영상 생성 플랫폼</li>
+      </ul>
+      <a class="visit" href="https://www.vidu.com/ko" target="_blank" rel="noopener">바로가기</a>
+    </div>
+
+  </div>
+
+  <footer>총 8개 서비스 · 클릭하면 새 탭에서 열립니다</footer>
+</div>
+</body>
+</html>

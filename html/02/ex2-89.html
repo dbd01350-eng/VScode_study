@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>중단점과 모바일 우선</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      .card {
+        padding: 20px;
+        background-color: #3689ff;
+        color: #fff;
+        text-align: center;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      @media (min-width: 768px) {
+        .cards {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      } /* 768px~ */
+      @media (min-width:1200px) {
+        .cards {
+          grid-template-columns: repeat(4, 1fr);
+        }/* 1200px~ */
+    </style>
+  </head>
+  <body>
+    <div class="cards">
+      <div class="card">1</div>
+      <div class="card">2</div>
+      <div class="card">3</div>
+      <div class="card">4</div>
+    </div>
+  </body>
+</html>

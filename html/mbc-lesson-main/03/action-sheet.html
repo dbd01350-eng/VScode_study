@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>당근 영상 생성 스토리보드 - Action Sheet</title>
+  <link rel="stylesheet" href="action-sheet.css" />
+</head>
+<body>
+  <div class="page" id="page">
+
+    <!-- 액션시트를 다시 띄우는 버튼 (닫힌 후 사용) -->
+    <button type="button" class="open-trigger" id="openTrigger" hidden>액션시트 열기</button>
+
+    <!-- Action Sheet (iPad / Popover) -->
+    <div class="action-sheet" id="actionSheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+
+      <!-- 제목 + 설명 -->
+      <div class="sheet-header">
+        <p class="sheet-title" id="sheetTitle">A Short Title is Best</p>
+        <p class="sheet-desc">A message should be a short, complete sentence.</p>
+      </div>
+
+      <!-- 액션 버튼 목록 -->
+      <ul class="sheet-actions">
+        <li><button type="button" class="sheet-btn" data-action="action-1">Action</button></li>
+        <li><button type="button" class="sheet-btn" data-action="action-2">Action</button></li>
+        <li><button type="button" class="sheet-btn" data-action="action-3">Action</button></li>
+        <li><button type="button" class="sheet-btn" data-action="action-4">Action</button></li>
+        <li><button type="button" class="sheet-btn" data-action="action-5">Action</button></li>
+        <li><button type="button" class="sheet-btn is-disabled" data-action="disabled" disabled>Disabled Action</button></li>
+        <li><button type="button" class="sheet-btn is-destructive" data-action="destructive">Destructive Action</button></li>
+      </ul>
+
+      <!-- 아래를 가리키는 말풍선 꼬리 -->
+      <span class="sheet-arrow" aria-hidden="true"></span>
+    </div>
+  </div>
+
+  <script src="action-sheet.js"></script>
+</body>
+</html>

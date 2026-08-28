@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <pre>
+    자바스크립트의 자료형 변환
+    각 자료형의 앞단어를 대문자로 작성
+    Number()
+    String()
+    Object()
+    Arrary()...
+  </pre>
+  <script>
+    let korNum = parseInt(prompt("국어몇점맞았어?", ''))
+    let engNum = parseInt(prompt("영어몇점맞았어?", ''))
+    let mathNum = parseInt(prompt("수학몇점맞았어?", ''))
+    let avg = (korNum + engNum + mathNum) / 3
+    console.log(korNum, engNum, mathNum, avg);
+    let result = `합격: ${korNum >= 60 && engNum >= 60 && mathNum >= 60 && avg >= 70}`
+    document.write(result)
+
+  </script>
+</body>
+
+</html>

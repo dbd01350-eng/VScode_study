@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나머지</title>
+  </head>
+  <body>
+    <h1>3의 배수</h1>
+    <script>
+      let userNum = prompt("숫자입력하세요");
+      console.log(userNum);
+      userNum = Number(userNum);
+      if (userNum % 3 === 0) {
+        alert("3의 배수입니다.");
+      } else if (userNum % 4 === 0) {
+        alert("4의 배수입니다.");
+      } else {
+        alert("3과 4의 배수는 아닙니다.");
+      }
+    </script>
+  </body>
+</html>

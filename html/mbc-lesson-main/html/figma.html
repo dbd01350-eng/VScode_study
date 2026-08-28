@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figma Design - Banner</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <!-- NanumSquare Neo (CDN via Noonnu) -->
+    <link href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            font-family: 'NanumSquareNeo', sans-serif;
+        }
+
+        .banner {
+            position: relative;
+            width: 1500px;
+            height: 500px;
+            background-color: #baa590;
+            overflow: hidden;
+        }
+
+        /* Charcoal Smudge Overlay */
+        .charcoal-smudge {
+            position: absolute;
+            width: 1520px;
+            height: 1520px;
+            top: 0;
+            left: 0;
+            opacity: 0.42;
+            background-image: url("https://www.figma.com/api/mcp/asset/286505a2-870e-40da-ad87-705bf867700b");
+            background-size: 200px 200px;
+            pointer-events: none;
+        }
+
+        /* Decoration Boxes */
+        .decoration {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            width: 1420px;
+            height: 420px;
+            pointer-events: none;
+        }
+
+        .box {
+            position: absolute;
+            border: 1px solid black;
+        }
+
+        .bottom-box {
+            background-color: black;
+            width: 735px;
+            height: 107px;
+            left: 382px; /* Relative to banner: 382, Relative to decoration: 342 */
+            top: 353px;  /* Relative to banner: 353, Relative to decoration: 313 */
+        }
+
+        .right-box {
+            width: 343px;
+            height: 420px;
+            left: 1117px;
+            top: 40px;
+            background-image: url("https://www.figma.com/api/mcp/asset/7a682523-09cd-4545-8a71-d4cc14699803");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .left-box {
+            width: 343px;
+            height: 420px;
+            left: 40px;
+            top: 40px;
+            background-image: url("https://www.figma.com/api/mcp/asset/a8400135-3cf0-47dd-9ef3-cd36ef1919ae");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .top-box {
+            width: 736px;
+            height: 314px;
+            left: 382px;
+            top: 40px;
+        }
+
+        /* Text Styles */
+        .headline {
+            position: absolute;
+            width: 654px;
+            height: 73px;
+            left: 425px;
+            top: 92px;
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 800;
+            font-size: 97px;
+            color: black;
+            text-align: center;
+            letter-spacing: -2.91px;
+            line-height: 0.9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .group-1 {
+            position: absolute;
+            width: 471px;
+            height: 107px;
+            left: 517px;
+            top: 196px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .subhead-1 {
+            font-family: 'NanumSquareNeo', sans-serif;
+            font-weight: 700;
+            font-size: 48px;
+            color: black;
+            letter-spacing: -1.44px;
+            line-height: 0.9;
+        }
+
+        .subhead-2 {
+            font-family: 'NanumSquareNeo', sans-serif;
+            font-weight: 700;
+            font-size: 48px;
+            color: black;
+            letter-spacing: -1.44px;
+            line-height: 0.9;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        .group-2 {
+            position: absolute;
+            width: 555px;
+            height: 117.5px;
+            left: 462px;
+            top: 374px;
+            text-align: center;
+        }
+
+        .main-title {
+            font-family: 'NanumSquareNeo', sans-serif;
+            font-weight: 400;
+            font-size: 60px;
+            color: #ac9a88;
+            letter-spacing: -2.4px;
+            line-height: 1.1;
+        }
+
+        .date {
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'DM Mono', monospace;
+            font-weight: 400;
+            font-size: 14.339px;
+            color: #684517;
+            letter-spacing: 0.5736px;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="charcoal-smudge"></div>
+        
+        <!-- Decoration Boxes -->
+        <div class="box top-box"></div>
+        <div class="box left-box"></div>
+        <div class="box right-box"></div>
+        <div class="box bottom-box"></div>
+
+        <!-- Text Content -->
+        <div class="headline">CAFEIN</div>
+
+        <div class="group-1">
+            <div class="subhead-1">당신의 하루를 채우는</div>
+            <div class="subhead-2">깊은 커피 향기</div>
+        </div>
+
+        <div class="group-2">
+            <div class="main-title">오픈기념 아아 1000원</div>
+            <div class="date">May 08 2025</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Layout Shifter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .shifter {
+      display: flex;
+      gap: 10px;
+    }
+
+    .nav {
+      background: skyblue;
+      flex: 1;
+      order: 1;
+    }
+
+    .main {
+      background: lemonchiffon;
+      flex: 3;
+      order: 2;
+    }
+
+    @media screen and (max-width:600px) {
+      .shifter {
+        flex-direction: column;
+      }
+
+      .main {
+        order: 1;
+      }
+
+      .nav {
+        order: 2;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="shifter">
+    <nav class="nav">Nav</nav>
+    <main class="main">Main</main>
+  </div>
+</body>
+
+</html>

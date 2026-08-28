@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이벤트 처리 방식</title>
+  </head>
+
+  <body>
+    <button class="b1" onclick="console.log('Button clicked!')">click</button>
+    <hr />
+    <button class="b2">click</button>
+    <hr />
+    <button class="b3">click</button>
+    <hr />
+    <script>
+      document.querySelector(".b2").onclick = function () {
+        console.log("@@@Button clicked!");
+      };
+      document.querySelector(".b3").addEventListener("click", function () {
+        console.log("b3 clicked!");
+      });
+    </script>
+  </body>
+</html>

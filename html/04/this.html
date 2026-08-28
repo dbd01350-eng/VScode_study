@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>자바스크립트 this 키워드</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Pretendard', sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+      padding: 28px 20px;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #0f172a;
+    }
+    .subtitle {
+      font-size: 0.88rem;
+      color: #64748b;
+      margin-bottom: 20px;
+    }
+    .card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .card-title {
+      font-weight: 600;
+      font-size: 0.98rem;
+      color: #1e293b;
+    }
+    .badge {
+      font-size: 0.72rem;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    .badge-normal { background: #dbeafe; color: #1e40af; }
+    .badge-arrow { background: #fef3c7; color: #92400e; }
+    .code-block {
+      background: #0f172a;
+      color: #e2e8f0;
+      font-family: 'Courier New', monospace;
+      font-size: 0.82rem;
+      padding: 12px 14px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      overflow-x: auto;
+      line-height: 1.5;
+    }
+    .output-box {
+      background: #f1f5f9;
+      border-left: 3px solid #3b82f6;
+      padding: 10px 14px;
+      border-radius: 0 6px 6px 0;
+      font-size: 0.85rem;
+    }
+    .output-label {
+      font-size: 0.72rem;
+      color: #64748b;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+    .output-value {
+      font-family: monospace;
+      font-weight: 600;
+      color: #0f172a;
+    }
+    .comment {
+      font-size: 0.8rem;
+      color: #64748b;
+      margin-top: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>JavaScript this 키워드 실습</h1>
+    <p class="subtitle">일반 함수와 화살표 함수에서의 this 바인딩 차이점 비교</p>
+
+    <!-- 카드 1: 일반 함수 -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">1. 일반 함수의 this</span>
+        <span class="badge badge-normal">객체 메서드</span>
+      </div>
+      <div class="code-block">
+const user1 = {<br/>
+&nbsp;&nbsp;name: "철수",<br/>
+&nbsp;&nbsp;sayHi: function () {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log("안녕 " + this.name); // this는 user1 객체<br/>
+&nbsp;&nbsp;}<br/>
+};<br/>
+user1.sayHi();
+      </div>
+      <div class="output-box">
+        <div class="output-label">Console Output</div>
+        <div class="output-value" id="output1">안녕 철수</div>
+      </div>
+      <p class="comment">💡 일반 함수에서 this는 호출한 객체(user1)를 가리킵니다.</p>
+    </div>
+
+    <!-- 카드 2: 화살표 함수 -->
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">2. 화살표 함수의 this</span>
+        <span class="badge badge-arrow">상위 스코프</span>
+      </div>
+      <div class="code-block">
+const user2 = {<br/>
+&nbsp;&nbsp;name: "영희",<br/>
+&nbsp;&nbsp;sayHi: () => {<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log("안녕 " + this.name); // this는 상위 스코프의 this<br/>
+&nbsp;&nbsp;}<br/>
+};<br/>
+user2.sayHi();
+      </div>
+      <div class="output-box" style="border-left-color: #f59e0b;">
+        <div class="output-label">Console Output</div>
+        <div class="output-value" id="output2">안녕 undefined</div>
+      </div>
+      <p class="comment">💡 화살표 함수는 자신만의 this를 가지지 않고 상위 스코프의 this를 물려받습니다.</p>
+    </div>
+  </div>
+
+  <script>
+    // 일반 함수의 this
+    const user1 = {
+      name: "철수",
+      sayHi: function () {
+        const msg = "안녕 " + this.name;
+        console.log(msg); // '안녕 철수'
+        document.getElementById('output1').textContent = msg;
+      },
+    };
+    user1.sayHi();
+
+    // 화살표 함수의 this
+    const user2 = {
+      name: "영희",
+      sayHi: () => {
+        const msg = "안녕 " + this.name;
+        console.log(msg); // '안녕 undefined'
+        document.getElementById('output2').textContent = msg;
+      },
+    };
+    user2.sayHi();
+  </script>
+</body>
+</html>
+

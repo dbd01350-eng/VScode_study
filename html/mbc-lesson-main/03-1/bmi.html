@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <p>신장(cm): <input type="number" name="height" id="height"></p>
+  <p>몸무게(kg): <input type="number" name="weight" id="weight"></p>
+  <button onclick="check()">결과보여주세요</button>
+  <hr>
+  <p id="result"></p>
+  <script>
+    /*   function check() {
+        const h = height.value;
+        const w = weight.value;
+        const ideal = (h - 100) * 0.9
+        result.textContent = w >= ideal ? "적정몸무게 이상" : "적정몸무게 미달"
+      } */
+    // #속성이 있는 요소는 바로 변수로 사용가능
+    // => 권장X
+    function check() {
+      const h = height.value;
+      const w = weight.value;
+      const ideal = (h - 100) * 0.9
+      if (w > ideal) {
+        result.textContent = "몸무게 이상"
+      }
+      if (w == ideal) {
+        result.textContent = "몸무게 좋아"
+      }
+      if (w < ideal) {
+        result.textContent = "몸무게 미달"
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>switch 문</title>
+  </head>
+  <body>
+    <script>
+      let num = prompt("숫자를 입력하세요.");
+      if (num !== "" && num !== null && num == Number) {
+        num = num % 2;
+        switch (num) {
+          case 0:
+            document.write("짝수입니다.");
+            break;
+          case 1:
+            document.write("홀수입니다.");
+            break;
+
+          default:
+            document.write("정수가 아닙니다.");
+            break;
+        }
+      } else {
+        alert("입력이 제대로 되지 않았습니다.");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>float 텍스트 흐름</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* float: 부유하다  */
+    img {
+      width: 150px;
+      float: right;
+      margin-left: 50px;
+    }
+
+    /*
+    .clear img {
+      clear: right;
+    } */
+    /* .container {
+      height: 300px;
+    } */
+    /* clearfix해줘 */
+    .clear::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    .container{margin:0 0 50px 0;}
+    .container:nth-of-type(2) img {
+      float: left;
+      margin:0 50px 0 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container clear">
+    <img src="imgs/lotus.png" alt="연꽃">
+    <p>인도가 원산지인 연꽃은 연못 위에 둥둥 떠 있는 수생식물이라는 이미지만 떠올리기 쉽지만, 실은 논이나 늪지의 진흙 속에서도 자라고 관상용뿐만 아니라 식용, 약용으로 쓰이기도 합니다.인도가 원산지인 연꽃은
+      연못 위에 둥둥 떠 있는 수생식물이라는 이미지만 떠올리기 쉽지만,</p>
+  </div>
+  <div class="container clear">
+    <img src="imgs/lotus.png" alt="연꽃">
+    <p>인도가 원산지인 연꽃은 연못 위에 둥둥 떠 있는 수생식물이라는 이미지만 떠올리기 쉽지만, 실은 논이나 늪지의 진흙 속에서도 자라고 관상용뿐만 아니라 식용, 약용으로 쓰이기도 합니다.</p>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Column Drop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      .cols{
+        display: flex;
+        gap: 10px;
+        background: pink;
+      }
+      .box{
+        flex: 1;
+      }
+      @media screen and (max-width:600px) {
+        .cols{
+          flex-direction: column;
+        }        
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cols">
+      <div class="box">A</div>
+      <div class="box">B</div>
+      <div class="box">C</div>
+    </div>
+  </body>
+</html>

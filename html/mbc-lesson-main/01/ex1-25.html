@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>다양한 input</title>
+</head>
+
+<body>
+  <form action="#" method="post">
+    <fieldset>
+      <legend>type 속성</legend>
+      <p>아이디: <input type="text" name="uid"></p>
+      <p>비밀번호: <input type="password"></p>
+      <p>검색: <input type="search"></p>
+      <p>이메일: <input type="email" required></p>
+      <p>전화번호: <input type="tel" placeholder="-을 포함한 전화번호 입력하세요"></p>
+      <p>색상: <input type="color"></p>
+      <p>만족도: <input type="range" min="1" max="10"></p>
+      <p>수량: <input type="number" min="1"></p>
+      <p><label>예: <input type="radio" name="receive"></label></p>
+      <p><label>아니오: <input type="radio" name="receive"></label></p>
+      <p>
+        <label>html
+          <input type="checkbox" name="skill" checked>
+        </label>
+        <label>css
+          <input type="checkbox" name="skill">
+        </label>
+        <label>js
+          <input type="checkbox" name="skill">
+        </label>
+      </p>
+      <p>
+        <input type="date">
+      </p>
+      <!-- name 속성 input 에 필수로 넣어야함
+        기능: 서버에 저장될 데이터 이름표 역할
+      -->
+      <p>
+        <select name="size" id="size">
+          <option value="s">S</option>
+          <option value="m">M</option>
+          <option value="l">L</option>
+          <option value="xl">XL</option>
+        </select>
+      </p>
+      <p><input type="file"></p>
+      <button type="submit">전송</button>
+      <button type="reset">취소</button>
+      <button>클릭</button>
+    </fieldset>
+  </form>
+</body>
+
+</html>

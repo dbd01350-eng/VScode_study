@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초등학생도 이해하는 HTML 기본 구조</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+            background: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: #667eea;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        header .emoji {
+            font-size: 3em;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .card h2 {
+            color: #667eea;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h2 .icon {
+            font-size: 1.3em;
+        }
+
+        .house-analogy {
+            background: #fff3e0;
+            border-left: 5px solid #ff9800;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .house-analogy h3 {
+            color: #e65100;
+            margin-bottom: 10px;
+        }
+
+        .house-part {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px 0;
+            border-bottom: 1px dashed #ffcc80;
+        }
+
+        .house-part:last-child {
+            border-bottom: none;
+        }
+
+        .house-part .emoji-box {
+            font-size: 2em;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        .house-part .desc {
+            flex: 1;
+        }
+
+        .house-part .tag {
+            background: #ff9800;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.95em;
+        }
+
+        th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        tr:nth-child(even) {
+            background: #f8f9ff;
+        }
+
+        .code-block {
+            background: #1e1e2e;
+            color: #a6accd;
+            padding: 20px;
+            border-radius: 15px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            line-height: 1.8;
+        }
+
+        .code-block .comment {
+            color: #676e95;
+        }
+
+        .code-block .tag {
+            color: #ff79c6;
+        }
+
+        .code-block .attr {
+            color: #ffb86c;
+        }
+
+        .code-block .string {
+            color: #f1fa8c;
+        }
+
+        .code-block .text {
+            color: #e0e0e0;
+        }
+
+        .highlight-box {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .highlight-box h3 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+
+        .highlight-box ol {
+            padding-left: 25px;
+        }
+
+        .highlight-box li {
+            margin: 8px 0;
+            font-size: 1.1em;
+        }
+
+        .highlight-box .code-inline {
+            background: #c8e6c9;
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-weight: bold;
+            color: #1b5e20;
+        }
+
+        .fun-fact {
+            background: #fce4ec;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .fun-fact h3 {
+            color: #c2185b;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="emoji">🎒</div>
+            <h1>초등학생도 이해하는 HTML</h1>
+            <p>웹페이지 만드는 법, 쉽게 알려줄게!</p>
+        </header>
+
+        <div class="card">
+            <h2><span class="icon">❓</span> HTML이 뭐예요?</h2>
+            <p>HTML은 <strong>웹페이지를 만드는 언어</strong>야!</p>
+            <p>책을 생각해봐. 책에는 <strong>표지, 목차, 본문</strong>이 있지? HTML도 똑같아!</p>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">📖</span> 책 = HTML 문서</h2>
+            <table>
+                <tr>
+                    <th>책의 부분</th>
+                    <th>HTML 부분</th>
+                    <th>설명</th>
+                </tr>
+                <tr>
+                    <td><strong>표지</strong></td>
+                    <td><code>&lt;!DOCTYPE html&gt;</code></td>
+                    <td>"이 책은 HTML5 책이에요!" 라고 알려줘</td>
+                </tr>
+                <tr>
+                    <td><strong>책 전체</strong></td>
+                    <td><code>&lt;html&gt;</code></td>
+                    <td>책의 첫 장부터 마지막 장까지</td>
+                </tr>
+                <tr>
+                    <td><strong>목차/저자 정보</strong></td>
+                    <td><code>&lt;head&gt;</code></td>
+                    <td>책 안에 적혀 있지만, 본문은 아닌 부분</td>
+                </tr>
+                <tr>
+                    <td><strong>본문 내용</strong></td>
+                    <td><code>&lt;body&gt;</code></td>
+                    <td>실제로 읽는 이야기 내용</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🏠</span> 집으로 비유하면 더 쉬워!</h2>
+            <div class="house-analogy">
+                <h3>🏡 HTML = 집 한 채</h3>
+
+                <div class="house-part">
+                    <div class="emoji-box">📋</div>
+                    <div class="desc">
+                        <span class="tag">&lt;!DOCTYPE html&gt;</span><br>
+                        "이 집은 현대식 집이에요!" (건축 스타일 알려주기)
+                    </div>
+                </div>
+
+                <div class="house-part">
+                    <div class="emoji-box">🏠</div>
+                    <div class="desc">
+                        <span class="tag">&lt;html&gt;</span><br>
+                        집 전체 (땅부터 지붕까지)
+                    </div>
+                </div>
+
+                <div class="house-part">
+                    <div class="emoji-box">📦</div>
+                    <div class="desc">
+                        <span class="tag">&lt;head&gt;</span><br>
+                        지하 창고 (눈에 안 보이는 집 정보)
+                    </div>
+                </div>
+
+                <div class="house-part">
+                    <div class="emoji-box">🚪</div>
+                    <div class="desc">
+                        <span class="tag">&lt;title&gt;</span><br>
+                        집 문 앞 이름표 ("준서네 집")
+                    </div>
+                </div>
+
+                <div class="house-part">
+                    <div class="emoji-box">🛋️</div>
+                    <div class="desc">
+                        <span class="tag">&lt;body&gt;</span><br>
+                        실제로 사는 공간 (거실, 방, 주방)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">✏️</span> 초등학생용 예시 코드</h2>
+            <div class="code-block">
+<span class="comment">&lt;!-- 이건 주석: 사람만 보고 컴퓨터는 무시해 --&gt;</span>
+<span class="tag">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html&gt;</span>
+  <span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;title&gt;</span><span class="text">나의 첫 웹페이지</span><span class="tag">&lt;/title&gt;</span>
+  <span class="tag">&lt;/head&gt;</span>
+  <span class="tag">&lt;body&gt;</span>
+    <span class="tag">&lt;h1&gt;</span><span class="text">안녕! 나는 준서야</span><span class="tag">&lt;/h1&gt;</span>
+    <span class="tag">&lt;p&gt;</span><span class="text">나는 초등학교 4학년이야.</span><span class="tag">&lt;/p&gt;</span>
+    <span class="tag">&lt;p&gt;</span><span class="text">좋아하는 것: 피자 🍕, 게임 🎮, 축구 ⚽</span><span class="tag">&lt;/p&gt;</span>
+  <span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h3>🎯 외워야 할 것 (딱 4개!)</h3>
+            <ol>
+                <li><span class="code-inline">&lt;html&gt;</span> → 집 전체</li>
+                <li><span class="code-inline">&lt;head&gt;</span> → 눈에 안 보이는 정보 창고</li>
+                <li><span class="code-inline">&lt;title&gt;</span> → 문 앞 이름표</li>
+                <li><span class="code-inline">&lt;body&gt;</span> → 실제로 보이는 방</li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🔧</span> head에 추가할 수 있는 것들</h2>
+            <table>
+                <tr>
+                    <th>태그</th>
+                    <th>설명</th>
+                </tr>
+                <tr>
+                    <td><code>&lt;link&gt;</code></td>
+                    <td>외부 CSS 파일 연결 (집 꾸미기 도구)</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;script&gt;</code></td>
+                    <td>JavaScript 코드 삽입 (집에 기능 추가)</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;style&gt;</code></td>
+                    <td>내부 CSS 스타일 정의 (벽 색, 글씨 크기)</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;meta&gt;</code></td>
+                    <td>SEO, 저자, 키워드 등 추가 정보</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2><span class="icon">🚀</span> 완전한 예시</h2>
+            <div class="code-block">
+<span class="tag">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="string">"ko"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;head&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;meta</span> <span class="attr">name</span>=<span class="string">"description"</span> <span class="attr">content</span>=<span class="string">"HTML 기본 구조 설명"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;title&gt;</span><span class="text">HTML 기본 구조</span><span class="tag">&lt;/title&gt;</span>
+  <span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"style.css"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+  <span class="tag">&lt;header&gt;</span>
+    <span class="tag">&lt;h1&gt;</span><span class="text">웹 페이지 제목</span><span class="tag">&lt;/h1&gt;</span>
+  <span class="tag">&lt;/header&gt;</span>
+  <span class="tag">&lt;main&gt;</span>
+    <span class="tag">&lt;p&gt;</span><span class="text">메인 콘텐츠 영역</span><span class="tag">&lt;/p&gt;</span>
+  <span class="tag">&lt;/main&gt;</span>
+  <span class="tag">&lt;footer&gt;</span>
+    <span class="tag">&lt;p&gt;</span><span class="text">© 2026</span><span class="tag">&lt;/p&gt;</span>
+  <span class="tag">&lt;/footer&gt;</span>
+  <span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="string">"script.js"</span><span class="tag">&gt;&lt;/script&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span>
+            </div>
+        </div>
+
+        <div class="fun-fact">
+            <h3>💡 꿀팁!</h3>
+            <p>이 파일을 <strong>메모장</strong>에 복사해서 <code>index.html</code> 이라는 이름으로 저장한 뒤,</p>
+            <p>더블클릭하면 <strong>브라우저(크롬, 엣지 등)</strong>에서 바로 볼 수 있어!</p>
+            <p>그리고 F12 키를 누르면 개발자 도구가 나와서 HTML 구조를 직접 탐험할 수 있어 🔍</p>
+        </div>
+
+        <footer>
+            <p>🎉 준서야, HTML 화이팅! 🎉</p>
+            <p>Made with 💙 for 초등학생 코딩 입문자</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>반복문</h1>
+  <h2>for</h2>
+  <ul class="menu1">
+    <li>list item 1</li>
+    <li>list item 2</li>
+    <li>list item 3</li>
+    <li>list item 4</li>
+  </ul>
+  <hr />
+  <h2>foreach</h2>
+  <ul class="menu2">
+    <li>list item 1</li>
+    <li>list item 2</li>
+    <li>list item 3</li>
+    <li>list item 4</li>
+  </ul>
+  <hr />
+  <h2>for of</h2>
+  <ul class="menu3">
+    <li>list item 1</li>
+    <li>list item 2</li>
+    <li>list item 3</li>
+    <li>list item 4</li>
+  </ul>
+  <hr />
+  <h2>do / while</h2>
+  <ul class="menu4">
+    <li>list item 1</li>
+    <li>list item 2</li>
+    <li>list item 3</li>
+    <li>list item 4</li>
+  </ul>
+  <hr />
+  <script>
+    let menu1 = document.querySelectorAll('.menu1 li')
+    let menu2 = document.querySelectorAll('.menu2 li')
+    let menu3 = document.querySelectorAll('.menu3 li')
+    let menu4 = document.querySelectorAll('.menu4 li')
+
+
+    //for
+    for (let i = 0; i < menu1.length; i++) {
+      menu1[i].style.color = 'red';
+      menu1[i].addEventListener('mouseover', function () {
+        this.style.color = 'green';
+        document.body.style.background = 'gray';
+      })
+
+      menu1[i].addEventListener('mouseout', function () {
+        this.style.color = 'red';
+        document.body.style.background = 'white';
+      })
+    }
+
+    //foreach
+    //배열.forEach(function(){})
+    console.log(menu2);
+
+    menu2.forEach(function (e, i) {
+      menu2[i].addEventListener('mouseover', function () {
+        this.style.background = 'yellow';
+      })
+      menu2[i].addEventListener('mouseout', function () {
+        this.style.background = 'white';
+      })
+    })
+
+
+    //forof
+    //for(변수 of 배열){}
+    for (let j of menu3) {
+      j.addEventListener('mouseover', function () {
+        this.style.background = 'yellow';
+      })
+      j.addEventListener('mouseout', function () {
+        this.style.background = 'white';
+      })
+    }
+
+    //do/while
+    let z = 0;
+    do {
+      menu4[z].addEventListener('mouseover', function () {
+        this.style.color = 'pink'
+      })
+      menu4[z].addEventListener('mouseout', function () {
+        this.style.color = 'blue'
+      })
+      z++;
+    } while (z < menu4.length)
+  </script>
+</body>
+
+</html>

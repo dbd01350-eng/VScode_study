@@ -1,0 +1,22 @@
+@charset 'UTF-8';
+/* <link> 로 연결된 CSS 파일 내의 @import 문*/
+@import url("./import.css");
+/* <link> 로 연결된 CSS 파일 내의 선언문*/
+p {
+  color: green;
+}
+/* =============================== */
+/* ======명시도(점수)=============== */
+/* =============================== */
+* {
+  color: blue;
+}
+h2#h2 {
+  color: purple;
+}
+h2.h2[title="점수"] {
+  color: green;
+}
+.h2[title="점수"] {
+  color: black;
+}

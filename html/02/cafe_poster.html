@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yaksu Cafe Poster</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            width: 1500px;
+            height: 500px;
+            background-color: #c581aa;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Decoration Boxes */
+        .box {
+            position: absolute;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+
+        .left-box {
+            left: 40px;
+            top: 40px;
+            width: 343px;
+            height: 420px;
+        }
+
+        .right-box {
+            left: 1117px;
+            top: 40px;
+            width: 343px;
+            height: 420px;
+        }
+
+        .top-box {
+            left: 382px;
+            top: 40px;
+            width: 736px;
+            height: 314px;
+        }
+
+        .bottom-box {
+            left: 382px;
+            top: 353px;
+            width: 735px;
+            height: 107px;
+            background-color: black;
+        }
+
+        /* Text Styles */
+        .text {
+            position: absolute;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+
+        .headline {
+            left: 423px;
+            top: 129px;
+            width: 654px;
+            height: 134px;
+            font-family: 'Unbounded', sans-serif;
+            font-weight: 800; /* ExtraBold */
+            font-size: 81.313px;
+            line-height: 0.9;
+            color: black;
+            letter-spacing: -2.4394px;
+            text-transform: uppercase;
+        }
+
+        .headline p {
+            margin: 0;
+        }
+
+        .body-text {
+            font-family: 'DM Mono', monospace;
+            font-weight: 500; /* Medium */
+            font-size: 24px;
+            color: black;
+            letter-spacing: 1.2px;
+        }
+
+        .body-text-1 {
+            left: 76px;
+            top: 239px;
+            width: 270px;
+            height: 22px;
+        }
+
+        .body-text-2 {
+            left: 1154px;
+            top: 239px;
+            width: 270px;
+            height: 22px;
+        }
+
+        .location {
+            left: 423px;
+            top: 398px;
+            width: 654px;
+            height: 17px;
+            font-family: 'DM Mono', monospace;
+            font-weight: 500;
+            font-size: 24px;
+            color: #c581aa;
+            letter-spacing: 1.2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Decoration -->
+        <div class="box left-box"></div>
+        <div class="box right-box"></div>
+        <div class="box top-box"></div>
+        <div class="box bottom-box"></div>
+
+        <!-- Headline -->
+        <div class="text headline">
+            <p>Yaksu</p>
+            <p>Cafe</p>
+        </div>
+
+        <!-- Side Text -->
+        <div class="text body-text body-text-1">
+            8AM-2PM
+        </div>
+        <div class="text body-text body-text-2">
+            OPEN EVERY DAY
+        </div>
+
+        <!-- Bottom Text -->
+        <div class="text location">
+            468 DUKE STREET
+        </div>
+    </div>
+
+</body>
+</html>

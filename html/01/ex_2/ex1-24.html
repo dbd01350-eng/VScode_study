@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>폼 요소</title>
+  </head>
+  <body>
+    <!-- 
+    form : 웹브라우저에서 유일하게 사용자의 데이터를 입력받을 수 있는 요소
+    action : 사용자의 데이터를 전송하고 저장할 서버 주소
+    method : 전송방식(get:공개형, post:비공개형)
+    fieldset : form 요소를 그룹핑
+    legend : fieldset의 이름
+    -->
+    <form action="#" method="get">
+      <fieldset>
+        <legend>type 속성</legend>
+        <p>아이디: <input type="text" required /></p>
+        <p>비밀번호: <input type="password" required /></p>
+        <p>검색: <input type="search" required /></p>
+        <p>이메일: <input type="email" required /></p>
+        <p>전화번호: <input type="tel" placeholder="-를 제외한 전화번호 입력"/></p>
+        <p>색상: <input type="color" required /></p>
+        <p>만족도: <input type="range" min="1" max="10" required /></p>
+        <p>수량: <input type="number" min="1" required /></p>
+        <p>
+          <label>예: <input type="radio" name="receive" /></label>
+        </p>
+        <p>
+          <label>아니오:<input type="radio" name="receive" /></label>
+        </p>
+        <p>
+          <label>html: <input type="checkbox" name="skill" checked required/></label>
+        </p>
+        <p>
+          <label>html: <input type="checkbox" name="skill" required /></label>
+        </p>
+        <p>
+          <label>html: <input type="checkbox" name="skill" required /></label>
+        </p>
+        <p><input type="date" required></p>
+        <!-- name 속성 input에 필수로 넣어야함
+         기능 : 서버에 저장될 데이터 이름표 역할 -->
+        <p><select name="size" id="size">
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+        </select></p>
+        <p><input type="file"></p>
+        <button type="submit">전송</button>
+        <button type="reset">리셋</button>
+      </fieldset>
+    </form>
+  </body>
+</html>

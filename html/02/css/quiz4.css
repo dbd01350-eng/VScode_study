@@ -1,0 +1,53 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+.wrap {
+  width: 500px;
+  margin: auto;
+}
+img {
+  width: 100%;
+}
+.info_wrap {
+  border: 1px solid #ddd;
+  text-align: center;
+}
+h2 {
+  text-align: left;
+  background: black;
+  color: white;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 10px;
+}
+.box {
+  padding: 20px;
+  line-height: 3;
+}
+h3 {
+  color: red;
+  font-weight: bold;
+  word-spacing: 5px;
+  font-size: 18px;
+}
+p {
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 20px;
+}
+.blue {
+  color: blue;
+}
+/* .box중에서 둘째 */
+/* .box:nth-child(2){ */
+.box:nth-of-type(2){
+  border-top:10px solid #ddd;
+  border-bottom:10px solid #ddd;
+}
+
+/* 4남2녀
+  6남매->둘째인 남형제(둘째인 .box)
+  남형제 중에 둘째 :nth-of-type
+*/

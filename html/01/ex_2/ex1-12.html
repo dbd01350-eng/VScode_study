@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>목록 요소 활용</title>
+  </head>
+  <body>
+    <!-- ul>li*3>a -->
+    <ul>
+      <li><a href="#">menu1</a></li>
+      <li><a href="#">menu2</a></li>
+      <li><a href="#">menu3</a></li>
+    </ul>
+    <!-- ul>li>a+ul>li>a -->
+    <!-- ul*3>li>a+ul*3>li>a 
+       와   ul>li*3>a+ul*3>li>a 
+       의 결과가 동일함-->
+    <ul>
+      <li>
+        <a href="#"
+          >menu1
+          <ul>
+            <li><a href="#">menu1-1</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">menu1-2</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">menu1-3</a></li>
+          </ul>
+        </a>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <a href="#"
+          >menu2
+          <ul>
+            <li><a href="#">menu2-1</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">menu2-2</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">menu2-3</a></li>
+          </ul>
+        </a>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <a href="#"
+          >menu3
+          <ul>
+            <li><a href="#">menu3-1</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">menu3-2</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">menu3-3</a></li>
+          </ul>
+        </a>
+      </li>
+    </ul>
+
+    <ul>
+      <li>
+        <a href="#">menu1</a>
+        <ul>
+          <li><a href="#">menu1-1</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">menu1-2</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">menu1-3</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">menu2</a>
+        <ul>
+          <li><a href="#">menu2-1</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">menu2-2</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">menu2-3</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">menu3</a>
+        <ul>
+          <li><a href="#">menu3-1</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">menu3-2</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">menu3-3</a></li>
+        </ul>
+      </li>
+    </ul>
+  </body>
+</html>

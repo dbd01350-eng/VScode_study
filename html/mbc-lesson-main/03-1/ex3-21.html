@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>3의 배수</h1>
+  <script>
+    let userNum = prompt('숫자입력하세요')
+    console.log(userNum); //자료형 변경전 null 반환
+    userNum = Number(userNum);  //0
+    if (userNum % 3 === 0) {
+      alert("3의 배수입니다.")
+      console.log(userNum);
+
+    } else if (userNum % 3 > 0) {
+      alert("3의 배수아닙니다.")
+    }
+  </script>
+</body>
+
+</html>

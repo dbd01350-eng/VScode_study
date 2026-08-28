@@ -1,0 +1,23 @@
+@import url('./reset.css');
+p {
+  background: rgba(0, 100, 200, .3);
+  width: 600px;
+  padding: 10px;
+  /* w: 620px */
+  margin: 20px;
+  margin-top: 50px;
+  margin-bottom: 300px;
+  /* 마진 겹칩현상 : 상하방향일때만 */
+}
+/* 인접한 요소의 상하 마진은 큰값으로 병합됨 */
+.art2 {
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+}
+.art2+p{
+  margin:20px auto;
+}

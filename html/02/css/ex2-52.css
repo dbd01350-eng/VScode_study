@@ -1,0 +1,32 @@
+@charset "UTF-8";
+@import url("reset.css");
+
+body {
+  background: url(../img/bg_grid.gif);
+}
+
+p {
+  background: rgba(0, 100, 200, 0.3);
+  width: 600px;
+  padding: 10px;
+  /* w:620px */
+  margin: 20px;
+  margin-top: 50px;
+  margin-bottom: 300px;
+  /* 마진 겹친현상 : 상하방향일 때 만 */
+  /* 인접한 요소의 상하 마진은 큰값으로 병합 됨 */
+}
+
+.art2 {
+    width: 300px;
+    margin: 0 auto;
+    /* width 차이가 있어야 margin의 auto 기능을 쓸 수 있다. */
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+}
+
+p:nth-of-type(3){
+    margin: 20px auto;
+}

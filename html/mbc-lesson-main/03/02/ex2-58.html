@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>box-sizing</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: url(imgs/bg_grid.png);
+    }
+
+    p {
+      background-color: rgba(255, 255, 0, .6);
+      border: 10px solid rgba(0, 0, 0, .5);
+      width: 600px;
+      height: 100px;
+      margin-bottom: 10px;
+    }
+
+    .sizing {
+      box-sizing: border-box;
+      /* 박스크기의 계산기준 지정 */
+    }
+
+    .sizing_list {
+      width: 500px;
+      /* margin-top: 200px;
+      margin-left:auto;
+      margin-right:auto; */
+      margin: 20px auto;
+      padding: 50px;
+      height: 200px;
+      box-sizing: border-box;
+      box-sizing: content-box;
+      list-style: none;
+    }
+
+    .sizing_list li {
+      background: rgba(219, 95, 95, .8);
+      text-align: center;
+      display: inline-block;
+      width: 24%;
+      height: 100%;
+      line-height: 200px;
+    }
+
+    .sizing_list li:nth-child(odd) {
+      background: rgba(219, 155, 95, .5)
+    }
+
+    .sizing_list li a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <p>It's impossible not only starting good but also keeping it firm!!</p>
+  <p class="sizing">It's impossible not only starting good but also keeping it firm!!</p>
+  <ul class="sizing_list">
+    <li><a href="#">Company</a></li>
+    <li><a href="#">Service</a></li>
+    <li><a href="#">Custommer</a></li>
+    <li><a href="#">Community</a></li>
+  </ul>
+</body>
+
+</html>

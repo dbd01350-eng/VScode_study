@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>호버(hover)</title>
+    <style>
+        a{
+            text-decoration: none;
+        }
+        a:link{
+            text-decoration: underline;
+        }
+        /* 방문후 */
+        a:visited{
+            color: green;
+        }
+        /* 마우스 가져다 댔을 때 */
+        a:hover{
+            background: black;
+            color: white;
+        }
+        /* 마우스로 누르고 있을 때 */
+        a:active{
+            color: red;
+            background: lemonchiffon;
+        }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <!-- ctrl+alt+shift -> 열선택 -->
+      <!-- ctrl+shift -> 행선택 -->
+      <li><a href="COMPANY">COMPANY</a></li>
+      <li><a href="#PRODUCT">PRODUCT</a></li>
+      <li><a href="#SERVICE">SERVICE</a></li>
+      <li><a href="#CUSTOMER">CUSTOMER</a></li>
+      <li><a href="#COMMUNITY">COMMUNITY</a></li>
+    </ul>
+  </body>
+</html>

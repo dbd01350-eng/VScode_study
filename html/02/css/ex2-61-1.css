@@ -1,0 +1,23 @@
+@charset "UTF-8";
+/* 
+position
+기능: 요소를 좌표로 위치시키는 속성
+속성값: static, relative, absolute, fixed, sticky
+좌표값: left, right, bottom, left
+*/
+
+.child:nth-child(1) {
+  /* static:포지셔닝 하기 전 기본값 
+  z-index는 -1,0,1만 존재 더한 숫자는 소용없다*/
+  position: static;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  z-index: 1;
+}
+.child:nth-child(2) {
+  position: relative;
+  top: -100px;
+  z-index: 0;
+}
+

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>box-shadow</title>
+    <style>
+      p {
+        display: inline-block;
+        background-color: antiquewhite;
+        padding: 20px;
+        border-radius: 55px 10px;
+      }
+      .shadow1 {
+        box-shadow: 8px 15px;
+      }
+      .shadow2 {
+        box-shadow: 8px 15px rgba(0, 0, 50, 0.4);
+      }
+      .shadow3 {
+        box-shadow: 8px 15px 8px rgba(0, 0, 50, 0.4);
+      }
+      .shadow4 {
+        box-shadow: 8px 15px 8px 17px rgba(0, 0, 50, 0.4);
+      }
+      .shadow5 {
+        box-shadow: 8px 15px 10px inset rgba(0, 0, 50, 0.4);
+      }
+      .shadow6 {
+        box-shadow:
+          -8px -15px 8px 8px darkblue,
+          8px 15px 8px 8px darkred;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="shadow1">It's impossible not only starting good but also keeping it firm!!</p>
+    <p class="shadow2">It's impossible not only starting good but also keeping it firm!!</p>
+    <p class="shadow3">It's impossible not only starting good but also keeping it firm!!</p>
+    <p class="shadow4">It's impossible not only starting good but also keeping it firm!!</p>
+    <p class="shadow5">It's impossible not only starting good but also keeping it firm!!</p>
+    <p class="shadow6">It's impossible not only starting good but also keeping it firm!!</p>
+  </body>
+</html>

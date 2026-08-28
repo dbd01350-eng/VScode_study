@@ -1,0 +1,42 @@
+/* 전체 영역 설정 */
+.container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* 입력창과 버튼 가로 배치 */
+.input-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* 입력창 크기 확장 */
+.input-field {
+  flex: 1;
+  padding: 10px;
+}
+
+/* 추가 버튼 디자인 */
+.add-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* 목록 스타일 초기화 */
+.list-box {
+  list-style: none;
+  padding: 0;
+}
+
+/* 개별 항목 디자인 */
+.list-item {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}

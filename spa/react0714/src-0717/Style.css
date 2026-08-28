@@ -1,0 +1,10 @@
+img {
+  width: 300px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  font-size: 32px;
+  background: ivory;
+}

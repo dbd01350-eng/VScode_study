@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>테두리이미지</title>
+    <style>
+      body {
+        margin: 20px;
+      }
+      div {
+        width: 600px;
+        height: 50px;
+        padding: 15px;
+        border: 10px solid transparent;
+      }
+      .round {
+        border-image: url("./img/border.png") 20;
+        line-height: 50px;
+        border-image: linear-gradient(blue, pink) 27;
+        /* border: dadius 40px; 적용되지 않음 */
+      }
+      .repeat {
+        border-image: url("./img/border.png") 27 repeat;
+      }
+      .stretch {
+        border-image: url(img/border.png) 20 stretch;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="round">It's impossible not only starting good but also keeping it firm!!</div>
+    <div class="repeat">It's impossible not only starting good but also keeping it firm!!</div>
+    <div class="stretch">It's impossible not only starting good but also keeping it firm!!</div>
+  </body>
+</html>

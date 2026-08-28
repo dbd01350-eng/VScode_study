@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <title>opacity</title>
+  <style>
+    body {
+      background: url(imgs/bg_grid.gif)
+    }
+
+    div {
+      background: yellow;
+      margin-bottom: 10px;
+    }
+
+    .light {
+      opacity: 0.2;
+    }
+
+    .medium {
+      background: rgba(255, 255, 0, 0.2);
+    }
+
+    .heavy {
+      filter: opacity(0.2) blur(10px);
+    }
+    .heavy:hover{
+      filter: opacity(1) blur(0px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="light">겨우 보이는 글</div>
+  <div class="medium">좀 더 잘 보이는 글</div>
+  <div class="heavy">쉽게 보이는 글</div>
+</body>
+
+</html>

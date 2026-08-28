@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+.red {
+  /* absolute:절대좌표 명령 시 float 발생 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.green {
+  /* relative:상대좌표 명령 시 자신의 위치에 따라 기준이 바뀜 normal flow */
+  position: relative;
+  top: 50%;
+  left: 50%;
+}
+
+.blue {
+  width: auto;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: -100px;
+  transition: 0.5s;
+}
+
+.green:hover + .blue {
+  top: 0;
+}
+
+body {
+  height: 200vh;
+}

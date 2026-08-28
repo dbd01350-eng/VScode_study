@@ -1,0 +1,23 @@
+header {
+  text-align: center;
+  padding: 40px 20px;
+  background: #7e5ac060;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+  color: #ffffff;
+  font-weight: lighter;
+}
+
+header h2 {
+  margin: 10px 0;
+}
+header h3 {
+  color: #ffffff;
+  font-weight: lighter;
+}

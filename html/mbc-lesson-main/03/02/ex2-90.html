@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Mostly Fluid</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    #wrap {
+      display: flex;
+      gap: 20px;
+      /* width: 960px; */
+      width: 100%;
+      max-width: 960px;
+      background: gray;
+      margin: 0 auto;
+    }
+
+    /* 뷰포트 폭이 0~960일때 #wrap 너비는 100%
+        @media screen and (max-width: 960px) {
+            #wrap {
+            width: 100%;
+            }
+        }
+        */
+    #content {
+      background: yellow;
+      /* flex-item 박스의 가변 크기지정 */
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 600px;
+      flex: 1 1 62.5%;
+    }
+
+    #aside {
+      background: orange;
+      /*  width:100px; */
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 400px;
+      flex: 1 1 35%;
+    }
+
+    @media screen and (max-width:600px) {
+      #wrap{flex-direction: column;}
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <div id="content">Content</div>
+    <div id="aside">Aside</div>
+  </div>
+</body>
+
+</html>

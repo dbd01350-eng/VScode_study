@@ -1,0 +1,17 @@
+@charset "UFT-8";
+
+.item {
+  width: 100px;
+  height: 100px;
+  background: tomato;
+  margin: 10px;
+}
+.flex-container {
+  display: flex;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  flex-direction: row-reverse;
+}

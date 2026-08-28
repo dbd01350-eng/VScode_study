@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS 중요도(우선순위)</title>
+    <!-- 동일한 우선순위에서는 하위로 갈 수록 중요도 높아짐 -->
+    <link rel="stylesheet" href="css/ex2-19-1.css" />
+    <link rel="stylesheet" href="css/ex2-19-2.css" />
+    <style>
+      /* 중요도 3순위 */
+      @import url(css/import.css);
+      /* 중요도 2순위 */
+      p {
+        color: yellow;
+      }
+    </style>
+    <style>
+      body {
+        background-color: black;
+      }
+      body {
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Title</h1>
+    <!-- 중요도 1순위 -->
+    <p style="color: orange">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat autem consequuntur, alias illum eveniet ratione ab enim cumque aperiam temporibus, numquam modi aliquid iste voluptatem corporis adipisci quas inventore ducimus.</p>
+    <h2 title="점수" class="h2" id="h2">명시도(점수)</h2>
+  </body>
+</html>

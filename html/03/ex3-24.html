@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>switch 문</title>
+  </head>
+  <body>
+    <script>
+      let session = prompt('관심 세션을 선택하세요. 1-마케팅, 2-개발, 3-디자인');
+      switch (session) {
+          case '1': document.write("<p>마케팅 세션은 <strong>201호</strong>에서 진행합니다.</p>");
+              break;
+          case '2': document.write("<p>개발 세션은 <strong>202호</strong>에서 진행합니다.</p>");
+              break;
+          case '3': document.write("<p>디자인 세션은 <strong>203호</strong>에서 진행합니다.</p>");
+              break;
+
+          default: document.write("<p>세션 문의는 <strong>204호</strong>에서 진행합니다.</p>")
+              break;
+      }
+    </script>
+  </body>
+</html>

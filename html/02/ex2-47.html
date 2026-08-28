@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>gradient의 표현</title>
+    <style>
+      p {
+        padding: 60px;
+      }
+      .g1 {
+        /* 구형 브라우저의 경우 그라디언트가 안될 수 있으니 안전용으로 단색 배경 배치 */
+        background-image: blue;
+        background-image: linear-gradient(red, green, blue);
+      }
+      .g2 {
+        background-image: linear-gradient(to right, red, green, blue);
+      }
+      .g3 {
+        background-image: linear-gradient(45deg, red, green, blue);
+      }
+      .g4 {
+        background-image: linear-gradient(45deg, red 15%, green 60%, blue 25%);
+      }
+      .g5 {
+        background-image: radial-gradient(red, green, blue);
+      }
+      .g6 {
+        background-image: repeating-linear-gradient(red, green 15%, blue 30%);
+      }
+      .g7 {
+        background: repeating-radial-gradient(ellipse farthest-corner at center center, rgba(27, 255, 0, 0.64) 0%, rgba(255, 255, 0, 0.66) 10%, rgba(255, 147, 0, 0.65) 20%);
+      }
+      .g8 {
+        background: radial-gradient(50% 50% at 50% 50%, #0048ff 0%, #ff78be 100%);
+      }
+      .g9 {
+        background-color: #e5e5f7;
+        opacity: 0.8;
+        background-image:
+          conic-gradient(from 60deg at 56.25% calc(425% / 6), transparent 0deg, transparent 0.5deg, #444cf7 0.5deg, #444cf7 119.5deg, transparent 119.5deg, transparent 120deg), conic-gradient(from 60deg at 56.25% calc(425% / 6), transparent 0deg, transparent 0.5deg, #444cf7 0.5deg, #444cf7 119.5deg, transparent 119.5deg, transparent 120deg), conic-gradient(from 180deg at 43.75% calc(425% / 6), transparent 0deg, transparent 0.5deg, #444cf7 0.5deg, #444cf7 119.5deg, transparent 119.5deg, transparent 120deg), conic-gradient(from 180deg at 43.75% calc(425% / 6), transparent 0deg, transparent 0.5deg, #444cf7 0.5deg, #444cf7 119.5deg, transparent 119.5deg, transparent 120deg),
+          conic-gradient(from -60deg at 50% calc(175% / 12), transparent 0deg, transparent 0.5deg, #444cf7 0.5deg, #444cf7 119.5deg, transparent 119.5deg, transparent 120deg), conic-gradient(from -60deg at 50% calc(175% / 12), transparent 0deg, transparent 0.5deg, #444cf7 0.5deg, #444cf7 119.5deg, transparent 119.5deg, transparent 120deg);
+        background-position:
+          0 0,
+          10px 17px,
+          0 0,
+          10px 17px,
+          10px 0,
+          0 17px;
+        background-size: 20px 34px;
+      }
+      .g10 {
+        background-color: #e5e5f7;
+        opacity: 0.8;
+        background: repeating-linear-gradient(45deg, #444cf7 0, #444cf7 5px, transparent 5px, transparent 15px), repeating-linear-gradient(-45deg, #22d1ee 0, #22d1ee 5px, transparent 5px, transparent 15px), #e5e5f7;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="g1">It's impossible not only starting good but also keeping it firm!!</p>
+    <p class="g2">It's impossible not only starting good but also keeping it firm!!</p>
+    <p class="g3">It's impossible not only starting good but also keeping it firm!!</p>
+    <p class="g4">It's impossible not only starting good but also keeping it firm!!</p>
+    <p class="g5">It's impossible not only starting good but also keeping it firm!!</p>
+    <p class="g6">It's impossible not only starting good but also keeping it firm!!</p>
+    <p class="g7">It's impossible not only starting good but also keeping it firm!!</p>
+    <p class="g8">It's impossible not only starting good but also keeping it firm!!</p>
+    <p class="g9">It's impossible not only starting good but also keeping it firm!!</p>
+    <p class="g10">It's impossible not only starting good but also keeping it firm!!</p>
+  </body>
+</html>

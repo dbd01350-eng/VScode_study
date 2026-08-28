@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>calc 레이아웃</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* 최상위 요소 선택자 */
+    :root {
+      --num10: 8px;
+      --primary: #bfb169;
+    }
+
+    .layout {
+      display: flex;
+    }
+
+    aside {
+      background: var(--primary);
+      width: calc(var(--num10) * 25)
+    }
+
+    main {
+      background: palevioletred;
+      width: calc(100% - 250px)
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout">
+    <aside>사이드바</aside>
+    <main>본문 영역</main>
+  </div>
+</body>
+
+</html>

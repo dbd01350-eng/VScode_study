@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>미디어 쿼리 기본 문법</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      /* 769px~ */
+      .box {
+        width: 600px;
+        height: 150px;
+        background-color: #3689ff;
+        text-align: center;
+      }
+      span {
+        display: inline-block;
+        font-size: 32px;
+        color: white;
+        padding: 30px;
+      }
+      /* 0~768px */
+      /* breakpoint, 화면중단점 , 화면분기*/
+      @media screen and (max-width: 768px) {
+        .box {
+          width: 100%;
+          background-color: red;
+        }
+        span:nth-of-type(2) {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"><span>👩</span><span>button</span></div>
+  </body>
+</html>

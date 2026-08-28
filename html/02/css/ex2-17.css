@@ -1,0 +1,11 @@
+li {
+  background: gainsboro;
+  margin-bottom: 20px;
+}
+a:link {
+  color: black;
+  text-decoration: none;
+}
+a:hover{
+    color: yellow;
+}

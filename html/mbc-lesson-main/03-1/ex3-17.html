@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const now = new Date().getHours() ;
+    //document.write(now.toLocaleTimeString())
+    //console.log(now);
+    //document.write(`<hr>${now.getHours()}`)
+    //(조건식)?true할일:false할일
+
+
+    (now < 12) ? document.querySelector('body').style.background = 'yellow' : document.querySelector('body').style.background = 'black'
+  </script>
+</body>
+
+</html>

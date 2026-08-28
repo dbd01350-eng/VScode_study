@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>unit</title>
+    <style>
+      :root {
+        font-size: 16px;
+      }
+
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 20px;
+      }
+      /* 절대단위 */
+      .parent {
+        font-size: 20px;
+        width: 400px;
+        height: 300px;
+        height: 600px;
+        background: #eee;
+        border: 2px solid #333;
+        padding: 10px;
+      }
+      .em {
+        font-size: 2em; /* 20x2=40px */
+        width: 9em; /* 너비 계산시 자신의 폰트 크기를 기준으로 */
+        background: #ffd;
+      }
+      .rem {
+        /* :root의 폰트크기 기준 */
+        font-size: 2rem;
+        width: 25rem;
+        background: #ffd;
+      }
+      .vh {
+        height: 20vh;
+        background: #ddf;
+        font-size: 5vh;
+      }
+      .vw{
+        width: 50vw;
+        background: #fdd;
+      }
+      .percent{
+        width: 50%;
+        height: 50%;
+        background-color: #dff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      부모 요소 (font-size 20px, 400x300)
+
+      <p class="em">em: 부모 폰트(20px) × 2 = 40px</p>
+      <p class="rem">rem: 루트 폰트(16px) × 2 = 32px</p>
+      <div class="vh">vh: 화면 높이의 20%</div>
+      <div class="vw">vw: 화면 너비의 50%</div>
+      <div class="percent">%: 부모(400x300)의 50%</div>
+    </div>
+  </body>
+</html>

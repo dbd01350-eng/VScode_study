@@ -1,0 +1,31 @@
+.br1{
+  width: 150px;
+  border:5px solid green;
+  margin:auto;
+}
+hr,ul{
+  margin-block-start:0em;
+  margin-block-end: 0em;
+}
+
+ul{
+  padding-inline-start: 0px;
+}
+
+a{
+  text-decoration: none;
+  color:#999;
+  color:#999999;
+  font-size: 14px;
+}
+.br1:nth-child(2){
+  border-color: pink;
+  margin-top: 50px;
+}
+a:hover{
+  color:blue;
+}
+img{
+  padding-top:20px;
+  padding-left: 20px;
+}

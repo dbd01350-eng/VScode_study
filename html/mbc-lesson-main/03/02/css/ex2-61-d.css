@@ -1,0 +1,15 @@
+/* .green 에 position absolute선언
+  top:50%;
+  left: 50%
+*/
+/* .parent 의 position 을 변경해서 기준변경을 확인
+relative, absolute, fixed
+*/
+.green {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.parent {
+  position: absolute;
+}

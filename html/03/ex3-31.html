@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>콜백 함수 기초</title>
+  </head>
+
+  <body>
+    <script>
+      const menu = () => {
+        return console.log("떡볶이");
+      };
+
+      const lunch = (cb) => {
+        cb();
+      };
+      lunch(menu);
+    </script>
+  </body>
+</html>

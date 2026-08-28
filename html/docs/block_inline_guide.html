@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧸 HTML 블록 vs 인라인 - 정확한 가이드</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #fff5f7 0%, #f0f8ff 50%, #fff9f0 100%);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            font-family: 'Jua', sans-serif;
+            font-size: 2.2rem;
+            text-align: center;
+            color: #ff6b9d;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 0px #ffe0ec;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #888;
+            font-size: 1rem;
+            margin-bottom: 35px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+            padding: 25px;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .block-section {
+            background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+            border: 3px solid #90caf9;
+        }
+
+        .inline-section {
+            background: linear-gradient(135deg, #fff3e0 0%, #fce4ec 100%);
+            border: 3px solid #ffcc80;
+        }
+
+        .warning-section {
+            background: linear-gradient(135deg, #ffebee 0%, #fce4ec 100%);
+            border: 3px solid #ef9a9a;
+        }
+
+        h2 {
+            font-family: 'Jua', sans-serif;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .block-section h2 { color: #1976d2; }
+        .inline-section h2 { color: #f57c00; }
+        .warning-section h2 { color: #c62828; }
+
+        .analogy-box {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid;
+        }
+
+        .block-section .analogy-box { border-left-color: #64b5f6; }
+        .inline-section .analogy-box { border-left-color: #ffb74d; }
+        .warning-section .analogy-box { border-left-color: #ef5350; }
+
+        .analogy-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .emoji-big {
+            font-size: 2.5rem;
+            display: block;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 10px 12px;
+            margin: 6px 0;
+            background: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            font-size: 1rem;
+        }
+
+        .block-section .feature-list li { border-left: 4px solid #64b5f6; }
+        .inline-section .feature-list li { border-left: 4px solid #ffb74d; }
+        .warning-section .feature-list li { border-left: 4px solid #ef5350; }
+
+        .tag-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .tag-item {
+            background: white;
+            padding: 10px 6px;
+            border-radius: 10px;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+        }
+
+        .block-section .tag-item {
+            color: #1565c0;
+            border: 2px solid #bbdefb;
+        }
+
+        .inline-section .tag-item {
+            color: #e65100;
+            border: 2px solid #ffe0b2;
+        }
+
+        .warning-section .tag-item {
+            color: #c62828;
+            border: 2px solid #ffcdd2;
+        }
+
+        .demo-area {
+            background: #fafafa;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+            border: 2px dashed #ddd;
+        }
+
+        .demo-title {
+            font-weight: 700;
+            color: #666;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+        }
+
+        .demo-block {
+            background: #e3f2fd;
+            border: 2px solid #64b5f6;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 6px 0;
+            color: #1565c0;
+            font-weight: bold;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .demo-inline {
+            background: #fff3e0;
+            border: 2px solid #ffb74d;
+            border-radius: 6px;
+            padding: 6px 12px;
+            margin: 0 3px;
+            color: #e65100;
+            font-weight: bold;
+            display: inline;
+            font-size: 0.9rem;
+        }
+
+        .compare-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 15px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            font-size: 0.95rem;
+        }
+
+        .compare-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px;
+            font-size: 1rem;
+        }
+
+        .compare-table td {
+            padding: 12px;
+            text-align: center;
+            background: white;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .compare-table tr:last-child td { border-bottom: none; }
+        .compare-table tr:nth-child(even) td { background: #fafbff; }
+
+        .highlight {
+            background: linear-gradient(120deg, #ffe0b2 0%, #ffe0b2 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 40%;
+            background-position: 0 88%;
+            padding: 0 4px;
+            font-weight: 700;
+        }
+
+        .warning-box {
+            background: #ffebee;
+            border-radius: 12px;
+            padding: 18px;
+            margin: 15px 0;
+            border: 2px solid #ef9a9a;
+        }
+
+        .warning-box strong {
+            color: #c62828;
+        }
+
+        .ok-box {
+            background: #e8f5e9;
+            border-radius: 12px;
+            padding: 18px;
+            margin: 15px 0;
+            border: 2px solid #a5d6a7;
+        }
+
+        .ok-box strong {
+            color: #2e7d32;
+        }
+
+        code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #d32f2f;
+            font-size: 0.9em;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #aaa;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.6rem; }
+            .container { padding: 20px; }
+            .tag-grid { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧸 HTML 블록 vs 인라인</h1>
+        <p class="subtitle">정확하고! 쉽고! 한눈에 보는 태그 레벨 가이드</p>
+
+        <!-- 블록 레벨 섹션 -->
+        <div class="section block-section">
+            <h2>📦 블록 레벨 (Block Level)</h2>
+
+            <div class="analogy-box">
+                <div class="analogy-title">🎯 이렇게 생각해 봐!</div>
+                <span class="emoji-big">🧱</span>
+                <p>블록 레벨은 <span class="highlight">레고 블록</span> 같아요!<br>
+                하나를 놓으면 <strong>한 줄을 다 차지</strong>하고, 다음 건 <strong>아래줄</strong>에 놓여요.</p>
+            </div>
+
+            <ul class="feature-list">
+                <li><span>✅</span> <strong>한 줄을 다 차지</strong>해요 (위아래로 쌓임)</li>
+                <li><span>✅</span> <strong>너비와 높이</strong>를 마음대로 줄 수 있어요</li>
+                <li><span>✅</span> 대부분 안에 <strong>블록과 인라인</strong>을 모두 넣을 수 있어요</li>
+                <li><span>✅</span> 문단, 제목, 상자를 만들 때 사용해요</li>
+            </ul>
+
+            <div class="demo-area">
+                <div class="demo-title">👀 실제로 보면 이렇게!</div>
+                <div class="demo-block">&lt;div&gt; 나는 블록! 한 줄 다 차지! &lt;/div&gt;</div>
+                <div class="demo-block">&lt;p&gt; 나도 블록! 아래로 내려와! &lt;/p&gt;</div>
+                <div class="demo-block">&lt;h1&gt; 나도 블록! 한 줄 다 쓰기! &lt;/h1&gt;</div>
+            </div>
+
+            <div class="analogy-title">🏷️ 블록 레벨 태그 종류</div>
+            <div class="tag-grid">
+                <div class="tag-item">&lt;div&gt;</div>
+                <div class="tag-item">&lt;p&gt;</div>
+                <div class="tag-item">&lt;h1&gt;~&lt;h6&gt;</div>
+                <div class="tag-item">&lt;ul&gt;</div>
+                <div class="tag-item">&lt;ol&gt;</div>
+                <div class="tag-item">&lt;li&gt;</div>
+                <div class="tag-item">&lt;section&gt;</div>
+                <div class="tag-item">&lt;article&gt;</div>
+                <div class="tag-item">&lt;header&gt;</div>
+                <div class="tag-item">&lt;footer&gt;</div>
+                <div class="tag-item">&lt;nav&gt;</div>
+                <div class="tag-item">&lt;aside&gt;</div>
+                <div class="tag-item">&lt;main&gt;</div>
+                <div class="tag-item">&lt;form&gt;</div>
+                <div class="tag-item">&lt;table&gt;</div>
+                <div class="tag-item">&lt;blockquote&gt;</div>
+                <div class="tag-item">&lt;pre&gt;</div>
+                <div class="tag-item">&lt;hr&gt;</div>
+            </div>
+        </div>
+
+        <!-- 인라인 레벨 섹션 -->
+        <div class="section inline-section">
+            <h2>🍬 인라인 레벨 (Inline Level)</h2>
+
+            <div class="analogy-box">
+                <div class="analogy-title">🎯 이렇게 생각해 봐!</div>
+                <span class="emoji-big">🍭</span>
+                <p>인라인은 <span class="highlight">사탕과 구슬</span> 같아요!<br>
+                <strong>한 줄 안에서 옆으로</strong> 나란히 놓을 수 있어요.</p>
+            </div>
+
+            <ul class="feature-list">
+                <li><span>✅</span> <strong>한 줄 안에서 옆으로</strong> 나란히 배치돼요</li>
+                <li><span>✅</span> <strong>너비와 높이</strong>를 마음대로 못 줘요 (내용물 크기만큼)</li>
+                <li><span>✅</span> 안에 <strong>블록은 절대 못 넣어요!</strong> 인라인만 가능</li>
+                <li><span>✅</span> 글자 꾸미기, 링크, 작은 조각을 넣을 때 사용해요</li>
+            </ul>
+
+            <div class="demo-area">
+                <div class="demo-title">👀 실제로 보면 이렇게!</div>
+                <p style="line-height: 2.2;">
+                    <span class="demo-inline">&lt;span&gt;사탕1&lt;/span&gt;</span>
+                    <span class="demo-inline">&lt;a&gt;사탕2&lt;/a&gt;</span>
+                    <span class="demo-inline">&lt;strong&gt;사탕3&lt;/strong&gt;</span>
+                    <span class="demo-inline">&lt;em&gt;사탕4&lt;/em&gt;</span>
+                </p>
+                <p style="margin-top: 10px; color: #888; font-size: 0.85rem;">→ 모두 한 줄 안에서 옆으로 붙어 있어요!</p>
+            </div>
+
+            <div class="analogy-title">🏷️ 인라인 레벨 태그 종류</div>
+            <div class="tag-grid">
+                <div class="tag-item">&lt;span&gt;</div>
+                <div class="tag-item">&lt;a&gt;</div>
+                <div class="tag-item">&lt;strong&gt;</div>
+                <div class="tag-item">&lt;em&gt;</div>
+                <div class="tag-item">&lt;img&gt;</div>
+                <div class="tag-item">&lt;input&gt;</div>
+                <div class="tag-item">&lt;label&gt;</div>
+                <div class="tag-item">&lt;button&gt;</div>
+                <div class="tag-item">&lt;br&gt;</div>
+                <div class="tag-item">&lt;code&gt;</div>
+                <div class="tag-item">&lt;small&gt;</div>
+                <div class="tag-item">&lt;sub&gt;</div>
+                <div class="tag-item">&lt;sup&gt;</div>
+                <div class="tag-item">&lt;i&gt;</div>
+                <div class="tag-item">&lt;b&gt;</div>
+                <div class="tag-item">&lt;u&gt;</div>
+                <div class="tag-item">&lt;del&gt;</div>
+                <div class="tag-item">&lt;mark&gt;</div>
+                <div class="tag-item">&lt;select&gt;</div>
+                <div class="tag-item">&lt;textarea&gt;</div>
+            </div>
+        </div>
+
+        <!-- ⚠️ 중요! 예외사항 -->
+        <div class="section warning-section">
+            <h2>⚠️ 꼭 알아야 할 예외!</h2>
+
+            <div class="warning-box">
+                <strong>❌ 블록이라고 다 되는 건 아니에요!</strong><br><br>
+                <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>~<code>&lt;h6&gt;</code>는 블록이지만,
+                <strong>안에 블록 요소를 넣으면 문법 오류</strong>가 나요!<br><br>
+                예: <code>&lt;p&gt;&lt;div&gt;이건 틀려요!&lt;/div&gt;&lt;/p&gt;</code> ❌<br>
+                예: <code>&lt;h1&gt;&lt;div&gt;이것도 틀려요!&lt;/div&gt;&lt;/h1&gt;</code> ❌
+            </div>
+
+            <div class="ok-box">
+                <strong>✅ 이런 블록은 블록+인라인 모두 OK!</strong><br><br>
+                <code>&lt;div&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>,
+                <code>&lt;li&gt;</code>, <code>&lt;td&gt;</code> 등은 안에 블록과 인라인을 자유롭게 넣을 수 있어요.<br><br>
+                예: <code>&lt;div&gt;&lt;p&gt;문단&lt;/p&gt;&lt;span&gt;글자&lt;/span&gt;&lt;/div&gt;</code> ✅
+            </div>
+
+            <div class="warning-box">
+                <strong>❌ 인라인은 무조건 블록을 못 넣어요!</strong><br><br>
+                인라인 요소 안에는 <strong>어떤 블록 요소도 들어갈 수 없어요.</strong><br>
+                이건 예외가 없어요! 무조건 지켜야 해요!<br><br>
+                예: <code>&lt;span&gt;&lt;div&gt;절대 안돼요!&lt;/div&gt;&lt;/span&gt;</code> ❌
+            </div>
+        </div>
+
+        <!-- 비교표 -->
+        <div class="section" style="background: linear-gradient(135deg, #f3e5f5 0%, #e8f5e9 100%); border: 3px solid #ce93d8;">
+            <h2 style="color: #7b1fa2;">🆚 한눈에 비교하기</h2>
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th>특징</th>
+                        <th>📦 블록 레벨</th>
+                        <th>🍬 인라인 레벨</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>배치 방식</strong></td>
+                        <td>위아래로 쌓기 (세로)</td>
+                        <td>옆으로 나란히 (가로)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>줄 차지</strong></td>
+                        <td>한 줄을 다 차지!</td>
+                        <td>내용물 크기만큼만</td>
+                    </tr>
+                    <tr>
+                        <td><strong>너비/높이</strong></td>
+                        <td>마음대로 줄 수 있음</td>
+                        <td>내용물에 맞춰짐</td>
+                    </tr>
+                    <tr>
+                        <td><strong>안에 뭘 넣을 수 있나</strong></td>
+                        <td>대부분 블록+인라인 OK<br><small style="color:#c62828">(단, &lt;p&gt;, &lt;h1&gt;~&lt;h6&gt;는 인라인만)</small></td>
+                        <td>인라인만 가능<br><small style="color:#c62828">(블록은 절대 안돼!)</small></td>
+                    </tr>
+                    <tr>
+                        <td><strong>비유</strong></td>
+                        <td>🧱 레고 블록</td>
+                        <td>🍭 사탕, 구슬</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 꿀팁 -->
+        <div class="section" style="background: linear-gradient(135deg, #c8e6c9 0%, #a5d6a7 100%); border: 3px solid #81c784;">
+            <h2 style="color: #2e7d32;">💡 개발자 선생님의 꿀팁!</h2>
+            <p>CSS로 태그의 성격을 바꿀 수 있어요!<br><br>
+            <code>display: block;</code> → 인라인 태그도 블록처럼 만들기<br>
+            <code>display: inline;</code> → 블록 태그도 인라인처럼 만들기<br>
+            <code>display: inline-block;</code> → 옆으로 나란히 있으면서 너비/높이 조절 가능! 🎉<br><br>
+            <strong>하지만!</strong> CSS로 <code>display</code>를 바꿔도 <strong>HTML 문법 규칙은 그대로</strong> 적용돼요.<br>
+            <code>&lt;p&gt;</code> 안에 <code>&lt;div&gt;</code>를 넣으면 CSS로 바꿔도 HTML 문법상 여전히 틀린 거예요!</p>
+        </div>
+
+        <div class="footer">
+            <p>🌈 HTML은 재미있어요! 정확한 규칙을 알면 더 멋진 웹페이지를 만들 수 있어요!</p>
+            <p style="margin-top: 8px;">Made with 💖 for beginner developers</p>
+        </div>
+    </div>
+</body>
+</html>

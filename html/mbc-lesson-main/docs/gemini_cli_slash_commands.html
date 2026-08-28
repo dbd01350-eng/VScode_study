@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini CLI Slash Commands Documentation</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 30px;
+            border-left: 5px solid #3498db;
+            padding-left: 10px;
+        }
+        .category {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        dl {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 10px 20px;
+        }
+        dt {
+            font-weight: bold;
+            color: #e67e22;
+            font-family: "Courier New", Courier, monospace;
+            background: #fdf2e9;
+            padding: 2px 8px;
+            border-radius: 4px;
+            justify-self: start;
+        }
+        dd {
+            margin: 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        dd:last-of-type {
+            border-bottom: none;
+        }
+        .note {
+            font-size: 0.9em;
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+        }
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Gemini CLI Slash Commands Documentation</h1>
+    <p style="text-align: center;">Gemini CLI에서 사용할 수 있는 주요 슬래시 명령어들을 카테고리별로 정리한 문서입니다.</p>
+
+    <div class="category">
+        <h2>Core Commands</h2>
+        <dl>
+            <dt>/about</dt>
+            <dd>현재 CLI의 버전 정보를 표시합니다.</dd>
+
+            <dt>/auth</dt>
+            <dd>인증 방법을 변경할 수 있는 대화 상자를 엽니다.</dd>
+
+            <dt>/bug</dt>
+            <dd>Gemini CLI에 대한 GitHub 이슈를 생성합니다. 명령어 뒤에 오는 텍스트가 이슈 제목이 됩니다.</dd>
+
+            <dt>/clear</dt>
+            <dd>터미널 화면과 스크롤백을 지웁니다 (단축키: <strong>Ctrl+L</strong>).</dd>
+
+            <dt>/docs</dt>
+            <dd>웹 브라우저에서 Gemini CLI 공식 문서를 엽니다.</dd>
+
+            <dt>/help (또는 /?)</dt>
+            <dd>사용 가능한 명령어에 대한 일반적인 도움말 정보를 표시합니다.</dd>
+
+            <dt>/quit (또는 /exit)</dt>
+            <dd>CLI를 종료합니다. <code>--delete</code> 플래그를 사용하면 현재 세션 기록과 임시 파일을 영구적으로 삭제합니다.</dd>
+
+            <dt>/settings</dt>
+            <dd>Gemini CLI 설정을 수정할 수 있는 대화형 편집기를 엽니다.</dd>
+
+            <dt>/stats</dt>
+            <dd>상세 세션, 모델, 도구 사용 통계를 표시합니다.</dd>
+
+            <dt>/upgrade</dt>
+            <dd>브라우저에서 Gemini Code Assist 업그레이드 페이지를 엽니다.</dd>
+        </dl>
+    </div>
+
+    <div class="category">
+        <h2>Session & History Management</h2>
+        <dl>
+            <dt>/resume (alias: /chat)</dt>
+            <dd>자동 저장된 세션을 탐색할 수 있는 브라우저를 엽니다. 수동 체크포인트(save, list, resume, delete, share)도 지원합니다.</dd>
+
+            <dt>/rewind</dt>
+            <dd>대화 내역을 뒤로 이동하여 상호작용을 검토하거나 코드 변경 사항을 되돌립니다 (단축키: <strong>Esc Esc</strong>).</dd>
+
+            <dt>/restore [id]</dt>
+            <dd>특정 도구 실행 전의 상태로 프로젝트 파일을 복구합니다.</dd>
+
+            <dt>/compress</dt>
+            <dd>토큰 절약을 위해 전체 채팅 컨텍스트를 요약으로 대체합니다.</dd>
+
+            <dt>/copy</dt>
+            <dd>Gemini의 마지막 출력을 시스템 클립보드에 복사합니다.</dd>
+        </dl>
+    </div>
+
+    <div class="category">
+        <h2>Context & Configuration</h2>
+        <dl>
+            <dt>/directory (/dir)</dt>
+            <dd>멀티 디렉토리 지원을 위한 워크스페이스 디렉토리를 관리합니다 (add, show).</dd>
+
+            <dt>/init</dt>
+            <dd>현재 디렉토리를 분석하고 프로젝트 전용 지침을 위한 <code>GEMINI.md</code> 파일을 생성합니다.</dd>
+
+            <dt>/memory</dt>
+            <dd><code>GEMINI.md</code> 파일의 계층적 지침 컨텍스트를 관리합니다 (add, list, refresh, show).</dd>
+
+            <dt>/model</dt>
+            <dd>활성 모델을 구성합니다 (manage, set &lt;model-name&gt;).</dd>
+
+            <dt>/plan</dt>
+            <dd>계획 모드(Plan Mode)로 전환하거나 현재 계획을 복사합니다.</dd>
+
+            <dt>/tools</dt>
+            <dd>사용 가능한 도구 목록을 표시합니다 (desc: 상세 설명, nodesc: 이름만).</dd>
+        </dl>
+    </div>
+
+    <div class="category">
+        <h2>Extensions & External Integrations</h2>
+        <dl>
+            <dt>/agents</dt>
+            <dd>로컬 및 원격 서브 에이전트를 관리합니다 (list, reload, enable, disable, config).</dd>
+
+            <dt>/commands</dt>
+            <dd><code>.toml</code> 파일에 정의된 커스텀 슬래시 명령어를 관리합니다.</dd>
+
+            <dt>/extensions</dt>
+            <dd>CLI 확장을 관리합니다 (install, list, enable, disable, update, uninstall).</dd>
+
+            <dt>/hooks</dt>
+            <dd>CLI 동작을 가로채는 라이프사이클 훅을 관리합니다.</dd>
+
+            <dt>/mcp</dt>
+            <dd>Model Context Protocol 서버를 관리합니다.</dd>
+
+            <dt>/skills</dt>
+            <dd>전문 워크플로우를 위한 에이전트 스킬을 관리합니다.</dd>
+
+            <dt>/ide</dt>
+            <dd>IDE 통합 및 컴패니언 상태를 관리합니다.</dd>
+
+            <dt>/setup-github</dt>
+            <dd>자동화된 이슈 및 PR 관리를 위한 GitHub Actions를 설정합니다.</dd>
+        </dl>
+    </div>
+
+    <div class="category">
+        <h2>Interface & Input</h2>
+        <dl>
+            <dt>/theme</dt>
+            <dd>CLI의 시각적 테마를 변경하는 대화 상자를 엽니다.</dd>
+
+            <dt>/vim</dt>
+            <dd>입력 프롬프트에 대해 Vim 스타일 탐색 및 편집 모드를 토글합니다.</dd>
+
+            <dt>/shells (/bashes)</dt>
+            <dd>백그라운드에서 실행 중인 쉘 프로세스 보기를 토글합니다.</dd>
+
+            <dt>/terminal-setup</dt>
+            <dd>지원되는 편집기에서 다중 행 입력을 위한 터미널 키바인딩을 구성합니다.</dd>
+
+            <dt>/policies</dt>
+            <dd>모든 활성 보안 및 동작 정책을 나열합니다.</dd>
+
+            <dt>/privacy</dt>
+            <dd>개인정보 처리방침을 표시하고 데이터 수집 동의를 관리합니다.</dd>
+
+            <dt>/permissions</dt>
+            <dd>폴더 신뢰 설정을 관리합니다 (trust).</dd>
+        </dl>
+    </div>
+
+    <footer>
+        Generated by Gemini CLI Agent &bull; 2026-05-20
+    </footer>
+
+</body>
+</html>
